@@ -1,0 +1,249 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "GABC",
+	"patterns": [
+		{
+			"include": "#entities"
+		},
+		{
+			"include": "#punctuation"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#regions"
+		}
+	],
+	"repository": {
+		"entities": {
+			"patterns": [
+				{
+					"name": "entity.name.tag.attribute.gabc",
+					"match": "^[A-Za-z0-9-]+:"
+				}
+			]
+		},
+		"punctuation": {
+			"patterns": [
+				{
+					"name": "punctuation.separator.attribute-end.gabc",
+					"match": ";"
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.percentage.gabc",
+					"begin": "%",
+					"end": "$"
+				}
+			]
+		},
+		"gabc-keywords": {
+			"patterns": [
+				{
+					"name": "variable.parameter.note.shape.accidental.gabc",
+					"match": "[a-np][xy#]"
+				},
+				{
+					"name": "variable.parameter.note.shape.initio-debilis.gabc",
+					"match": "-"
+				},
+				{
+					"name": "variable.parameter.note.shape.oriscus.gabc",
+					"match": "[Oo][01]?"
+				},
+				{
+					"name": "variable.parameter.note.shape.pes-quadratum.gabc",
+					"match": "q"
+				},
+				{
+					"name": "variable.parameter.note.shape.quilisma.gabc",
+					"match": "[Ww]"
+				},
+				{
+					"name": "variable.parameter.note.shape.trivirga.gabc",
+					"match": "vvv"
+				},
+				{
+					"name": "variable.parameter.note.shape.bivirga.gabc",
+					"match": "vv"
+				},
+				{
+					"name": "variable.parameter.note.shape.virga.gabc",
+					"match": "[Vv]"
+				},
+				{
+					"name": "variable.parameter.note.shape.tristropha.gabc",
+					"match": "sss"
+				},
+				{
+					"name": "variable.parameter.note.shape.distropha.gabc",
+					"match": "ss"
+				},
+				{
+					"name": "variable.parameter.note.shape.stropha.gabc",
+					"match": "s"
+				},
+				{
+					"name": "variable.parameter.note.shape.linea.gabc",
+					"match": "="
+				},
+				{
+					"name": "variable.parameter.note.shape.liquescent.gabc",
+					"match": "[~<>]"
+				},
+				{
+					"name": "variable.parameter.note.shape.liquescent.gabc",
+					"match": "[~<>]"
+				},
+				{
+					"name": "variable.parameter.note.shape.cavum.gabc",
+					"match": "r[0-8]?"
+				},
+				{
+					"name": "variable.parameter.note.shape.surrounded.gabc",
+					"match": "R"
+				},
+				{
+					"name": "variable.parameter.clef.gabc",
+					"match": "[cf]b?[1-5]"
+				},
+				{
+					"name": "keyword.other.note.punctum.quadratum.gabc",
+					"match": "[a-np]"
+				},
+				{
+					"name": "keyword.other.note.punctum.inclinatum.gabc",
+					"match": "[A-NP][012]?"
+				},
+				{
+					"name": "variable.parameter.symbol.episema.gabc",
+					"match": "_[0-5]*"
+				},
+				{
+					"name": "variable.parameter.symbol.ictus.gabc",
+					"match": "['][01]?"
+				},
+				{
+					"name": "variable.parameter.symbol.punctum-mora-vocis.gabc",
+					"match": "\\."
+				},
+				{
+					"name": "variable.parameter.separation.virgula.gabc",
+					"match": "`0?"
+				},
+				{
+					"name": "variable.parameter.separation.divisio.minimis.gabc",
+					"match": "\\^0?"
+				},
+				{
+					"name": "variable.parameter.separation.divisio.minima.gabc",
+					"match": ",[0_]?"
+				},
+				{
+					"name": "variable.parameter.separation.divisio.minor.gabc",
+					"match": ";[1-6]?"
+				},
+				{
+					"name": "variable.parameter.separation.divisio.finalis.gabc",
+					"match": "::"
+				},
+				{
+					"name": "variable.parameter.separation.divisio.maior.gabc",
+					"match": ":\\??"
+				}
+			]
+		},
+		"regions": {
+			"patterns": [
+				{
+					"name": "region.paren.gabc",
+					"begin": "\\(",
+					"end": "\\)",
+					"beginCaptures": {
+						"0": {
+							"name": "markup.punctuation.paren.open.gabc"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "markup.punctuation.paren.close.gabc"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#gabc-keywords"
+						},
+						{
+							"include": "#nabc"
+						}
+					]
+				},
+				{
+					"name": "region.translation.gabc",
+					"begin": "\\[",
+					"end": "\\]",
+					"beginCaptures": {
+						"0": {
+							"name": "markup.punctuation.translation.open"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "markup.punctuation.translation.close"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#strings"
+						}
+					]
+				},
+				{
+					"name": "markup.region.above-lines-text.gabc",
+					"begin": "<alt>",
+					"end": "</alt>"
+				},
+				{
+					"name": "markup.region.gregoriocolor.gabc",
+					"begin": "<c>",
+					"end": "</c>"
+				},
+				{
+					"name": "region.nonbreaking.gabc",
+					"begin": "<nlba>",
+					"end": "</nlba>",
+					"beginCaptures": {
+						"0": {
+							"name": "variable.parameter.region.nonbreaking.open.gabc"
+						}
+					},
+					"endCaptures": {
+						"0": {
+							"name": "variable.parameter.region.nonbreaking.open.gabc"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#regions"
+						}
+					]
+				},
+				{
+					"name": "markup.region.verbatim.gabc",
+					"begin": "<v>",
+					"end": "</v>"
+				},
+				{
+					"name": "markup.region.special.gabc",
+					"begin": "<sp>",
+					"end": "</sp>"
+				}
+			]
+		}
+	},
+	"scopeName": "source.gabc"
+}

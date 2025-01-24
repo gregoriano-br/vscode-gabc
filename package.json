@@ -1,0 +1,25 @@
+{
+  "name": "vscode-gabc",
+  "displayName": "vscode-gabc",
+  "description": "GABC/NABC Gregorian Chant Notation",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "gabc",
+      "aliases": ["GABC", "gabc"],
+      "extensions": [".gabc"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "gabc",
+      "scopeName": "source.gabc",
+      "path": "./syntaxes/gabc.tmLanguage.json"
+    }]
+  }
+}
