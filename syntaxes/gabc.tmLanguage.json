@@ -8,7 +8,7 @@
 	  { "include": "#gabc-syllable-controls" },
 	  { "include": "#gabc-syllable-other" },
 	  { "include": "#gabc-syllable-translation" },
-	  { "include": "#regions" }
+	  { "include": "#gabc-notes-region" }
 	],
 	"repository": {
 	  "comments": {
@@ -156,83 +156,142 @@
 		  }
 		]
 	  },
-	  "gabc-notation": {
+	  "gabc-notes-region": {
 		"patterns": [
 		  {
-			"name": "entity.name.tag.pitch.gabc",
+			"name": "region.notes.gabc",
+			"begin": "\\(",
+			"end": "\\)",
+			"beginCaptures": { "0": { "name": "region.notes.open.gabc" } },
+			"endCaptures": { "0": { "name": "region.notes.close.gabc" } },
+			"patterns": [
+			  { "include": "#gabc-notes" },
+			  { "include": "#nabc" }
+			]
+		  }
+		]
+	  },
+	  "gabc-notes-fusible-region": {
+		"patterns": [
+		  {
+			"name": "region.notes.fusible.gabc",
+			"begin": "@\\[",
+			"end": "\\]",
+			"beginCaptures": { "0": { "name": "keyword.control.notes.fusible.open.gabc" } },
+			"endCaptures": { "0": { "name": "keyword.control.notes.fusible.close.gabc" } },
+			"patterns": [ { "include": "#gabc-notes" } ]
+		  }
+		]
+	  },
+	  "gabc-notes": {
+		"patterns": [
+		  { "include": "#gabc-notes-spacing" },
+		  {
+			"name": "constant.character.note.pitch.gabc",
 			"match": "[a-np]"
 		  },
 		  {
-			"name": "variable.parameter.note.shape.accidental.gabc",
-			"match": "[a-np][xy#]"
+			"name": "constant.character.note.pitch.punctum-inclinatum.gabc",
+			"match": "[A-NP]([012]?)",
+			"captures": { "1": { "name": "constant.numeric.note.pitch.punctum-inclinatum.leaning.gabc" } }
 		  },
 		  {
-			"name": "variable.parameter.note.shape.initio-debilis.gabc",
-			"match": "-"
+			"name": "constant.character.escape.note.shape.oriscus.gabc",
+			"match": "o([01]?)",
+			"captures": { "1": { "name": "constant.numeric.note.shape.oriscus.variant.gabc" } }
 		  },
 		  {
-			"name": "variable.parameter.note.shape.oriscus.gabc",
-			"match": "[Oo][01]?"
+			"name": "constant.character.escape.note.shape.oriscus.scapus.gabc",
+			"match": "O([01]?)",
+			"captures": { "1": { "name": "constant.numeric.note.shape.oriscus.variant.gabc" } }
 		  },
 		  {
-			"name": "variable.parameter.note.shape.pes-quadratum.gabc",
+			"name": "constant.character.escape.note.shape.pes.quadratum.gabc",
 			"match": "q"
 		  },
 		  {
-			"name": "variable.parameter.note.shape.quilisma.gabc",
-			"match": "[Ww]"
+			"name": "constant.character.escape.note.shape.quilisma.gabc",
+			"match": "w"
 		  },
 		  {
-			"name": "variable.parameter.note.shape.trivirga.gabc",
+			"name": "constant.character.escape.note.shape.quilisma.quadratum.gabc",
+			"match": "W"
+		  },
+		  {
+			"name": "constant.character.escape.note.shape.trivirga.gabc",
 			"match": "vvv"
 		  },
 		  {
-			"name": "variable.parameter.note.shape.bivirga.gabc",
+			"name": "constant.character.escape.note.shape.bivirga.gabc",
 			"match": "vv"
 		  },
 		  {
-			"name": "variable.parameter.note.shape.virga.gabc",
-			"match": "[Vv]"
+			"name": "constant.character.escape.note.shape.virga.gabc",
+			"match": "v"
 		  },
 		  {
-			"name": "variable.parameter.note.shape.tristropha.gabc",
+			"name": "constant.character.escape.note.shape.virga.reversa.gabc",
+			"match": "V"
+		  },
+		  {
+			"name": "constant.character.escape.note.shape.tristropha.gabc",
 			"match": "sss"
 		  },
 		  {
-			"name": "variable.parameter.note.shape.distropha.gabc",
+			"name": "constant.character.escape.note.shape.distropha.gabc",
 			"match": "ss"
 		  },
 		  {
-			"name": "variable.parameter.note.shape.stropha.gabc",
+			"name": "constant.character.escape.note.shape.stropha.gabc",
 			"match": "s"
+		  },
+		  {
+			"name": "variable.parameter.note.shape.liquescent.deminutus.gabc",
+			"match": "~"
+		  },
+		  {
+			"name": "variable.parameter.note.shape.liquescent.augmented.gabc",
+			"match": ">"
+		  },
+		  {
+			"name": "variable.parameter.note.shape.liquescent.diminished.gabc",
+			"match": "<"
 		  },
 		  {
 			"name": "variable.parameter.note.shape.linea.gabc",
 			"match": "="
 		  },
 		  {
-			"name": "variable.parameter.note.shape.liquescent.gabc",
-			"match": "[~<>]"
+			"name": "constant.character.escape.note.shape.cavum.surrounded.gabc",
+			"match": "r0"
 		  },
 		  {
-			"name": "variable.parameter.note.shape.liquescent.gabc",
-			"match": "[~<>]"
+			"name": "constant.character.escape.note.shape.cavum.gabc",
+			"match": "r"
 		  },
 		  {
-			"name": "variable.parameter.note.shape.cavum.gabc",
-			"match": "r[0-8]?"
-		  },
-		  {
-			"name": "variable.parameter.note.shape.surrounded.gabc",
+			"name": "constant.character.escape.note.shape.quadratum.surrounded.gabc",
 			"match": "R"
+		  },
+		  {
+			"name": "variable.parameter.note.accidental.sharp.gabc",
+			"match": "[a-np]#"
+		  },
+		  {
+			"name": "variable.parameter.note.accidental.flat.gabc",
+			"match": "[a-np]x"
+		  },
+		  {
+			"name": "variable.parameter.note.accidental.natural.gabc",
+			"match": "[a-np]y"
+		  },
+		  {
+			"name": "variable.parameter.note.shape.initio-debilis.gabc",
+			"match": "-"
 		  },
 		  {
 			"name": "variable.parameter.clef.gabc",
 			"match": "[cf]b?[1-5]"
-		  },
-		  {
-			"name": "keyword.other.note.punctum.inclinatum.gabc",
-			"match": "[A-NP][012]?"
 		  },
 		  {
 			"name": "variable.parameter.symbol.episema.gabc",
@@ -269,6 +328,45 @@
 		  {
 			"name": "variable.parameter.separation.divisio.maior.gabc",
 			"match": ":\\??"
+		  },
+		  {
+			"name": "keyword.control.note.fusion.gabc",
+			"match": "@"
+		  }
+		]
+	  },
+	  "gabc-notes-spacing": {
+		"patterns": [
+		  {
+			"contentName": "constant.numeric.spacing.factored.gabc",
+			"begin": "/\\[",
+			"end": "\\]",
+			"beginCaptures": { "0": { "name": "variable.parameter.spacing.factored.open.gabc" } },
+			"endCaptures": { "0": { "name": "variable.parameter.spacing.factored.close.gabc" } }
+		  },
+		  {
+			"name": "variable.parameter.spacing.half.same-neume.gabc",
+			"match": "/0"
+		  },
+		  {
+			"name": "variable.parameter.spacing.small.same-neume.gabc",
+			"match": "/!"
+		  },
+		  {
+			"name": "variable.parameter.spacing.medium.gabc",
+			"match": "//"
+		  },
+		  {
+			"name": "variable.parameter.spacing.small.gabc",
+			"match": "/"
+		  },
+		  {
+			"name": "variable.parameter.spacing.non-breaking.gabc",
+			"match": "! "
+		  },
+		  {
+			"name": "variable.parameter.spacing.zero.gabc",
+			"match": "!"
 		  }
 		]
 	  },
@@ -278,21 +376,6 @@
 		"end": "[\\|\\)]",
 		"beginCaptures": { "0": { "name": "keyword.control.nabc.open.gabc" } },
 		"endCaptures": { "0": { "name": "keyword.control.nabc.close.gabc" } }
-	  },
-	  "regions": {
-		"patterns": [
-		  {
-			"name": "region.paren.gabc",
-			"begin": "\\(",
-			"end": "\\)",
-			"beginCaptures": { "0": { "name": "markup.punctuation.paren.open.gabc" } },
-			"endCaptures": { "0": { "name": "markup.punctuation.paren.close.gabc" } },
-			"patterns": [
-			  { "include": "#gabc-notation" },
-			  { "include": "#nabc" }
-			]
-		  }
-		]
 	  }
 	},
 	"scopeName": "source.gabc"
