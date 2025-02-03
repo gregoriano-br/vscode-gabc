@@ -194,6 +194,7 @@
 		  { "include": "#gabc-notes-braces" },
 		  { "include": "#gabc-notes-stem-length" },
 		  { "include": "#gabc-notes-custom-ledger-lines" },
+		  { "include": "#gabc-notes-slurs" },
 		  {
 			"name": "constant.character.note.pitch.gabc",
 			"match": "[a-np]"
@@ -528,6 +529,24 @@
 			"end": "\\]",
 			"beginCaptures": { "0": { "name": "entity.name.class.custom-ledger-line.under.open.gabc" } },
 			"endCaptures": { "0": { "name": "entity.name.class.custom-ledger-line.under.close.gabc" } }
+		  }
+		]
+	  },
+	  "gabc-notes-slurs": {
+		"patterns": [
+		  {
+			"contentName": "entity.other.attribute-name.slur.over.gabc",
+			"begin": "\\[oslur:",
+			"end": "\\]",
+			"beginCaptures": { "0": { "name": "entity.name.class.slur.over.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.class.slur.over.close.gabc" } }
+		  },
+		  {
+			"contentName": "entity.other.attribute-name.slur.under.gabc",
+			"begin": "\\[uslur:",
+			"end": "\\]",
+			"beginCaptures": { "0": { "name": "entity.name.class.slur.under.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.class.slur.under.close.gabc" } }
 		  }
 		]
 	  },
