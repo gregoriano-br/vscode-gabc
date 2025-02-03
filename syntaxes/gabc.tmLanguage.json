@@ -6,7 +6,8 @@
 	  { "include": "#headers" },
 	  { "include": "#gabc-syllable-markup" },
 	  { "include": "#gabc-syllable-controls" },
-	  { "include": "#gabc-other" },
+	  { "include": "#gabc-syllable-other" },
+	  { "include": "#gabc-syllable-translation" },
 	  { "include": "#regions" }
 	],
 	"repository": {
@@ -113,7 +114,7 @@
 		  }
 		]
 	  },
-	  "gabc-other": {
+	  "gabc-syllable-other": {
 		"patterns": [
 		  {
 			"contentName": "markup.other.above-lines-text.syllable.gabc",
@@ -141,6 +142,17 @@
 				"match": "\\\\[a-zA-Z@]+"
 			  }
 			]
+		  }
+		]
+	  },
+	  "gabc-syllable-translation": {
+		"patterns": [
+		  {
+			"name": "string.translation.syllable.gabc",
+			"begin": "\\[",
+			"end": "\\]",
+			"beginCaptures": { "0": { "name": "string.translation.syllable.open.gabc" } },
+			"endCaptures": { "0": { "name": "string.translation.syllable.close.gabc" } }
 		  }
 		]
 	  },
