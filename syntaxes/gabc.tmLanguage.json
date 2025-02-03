@@ -195,6 +195,7 @@
 		  { "include": "#gabc-notes-stem-length" },
 		  { "include": "#gabc-notes-custom-ledger-lines" },
 		  { "include": "#gabc-notes-slurs" },
+		  { "include": "#gabc-notes-above-lines-text" },
 		  {
 			"name": "constant.character.note.pitch.gabc",
 			"match": "[a-np]"
@@ -547,6 +548,17 @@
 			"end": "\\]",
 			"beginCaptures": { "0": { "name": "entity.name.class.slur.under.open.gabc" } },
 			"endCaptures": { "0": { "name": "entity.name.class.slur.under.close.gabc" } }
+		  }
+		]
+	  },
+	  "gabc-notes-above-lines-text": {
+		"patterns": [
+		  {
+			"contentName": "string.above-lines-text.gabc",
+			"begin": "\\[alt:",
+			"end": "\\]",
+			"beginCaptures": { "0": { "name": "entity.name.class.above-lines-text.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.class.above-lines-text.close.gabc" } }
 		  }
 		]
 	  },
