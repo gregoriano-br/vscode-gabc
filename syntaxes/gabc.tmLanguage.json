@@ -193,6 +193,7 @@
 		  { "include": "#gabc-notes-choral-signs" },
 		  { "include": "#gabc-notes-braces" },
 		  { "include": "#gabc-notes-stem-length" },
+		  { "include": "#gabc-notes-custom-ledger-lines" },
 		  {
 			"name": "constant.character.note.pitch.gabc",
 			"match": "[a-np]"
@@ -509,6 +510,24 @@
 		  {
 			"name": "entity.name.class.stem.short.gabc",
 			"match": "\\[ll:0]"
+		  }
+		]
+	  },
+	  "gabc-notes-custom-ledger-lines": {
+		"patterns": [
+		  {
+			"contentName": "entity.other.attribute-name.custom-ledger-line.over.gabc",
+			"begin": "\\[oll:",
+			"end": "\\]",
+			"beginCaptures": { "0": { "name": "entity.name.class.custom-ledger-line.over.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.class.custom-ledger-line.over.close.gabc" } }
+		  },
+		  {
+			"contentName": "entity.other.attribute-name.custom-ledger-line.under.gabc",
+			"begin": "\\[ull:",
+			"end": "\\]",
+			"beginCaptures": { "0": { "name": "entity.name.class.custom-ledger-line.under.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.class.custom-ledger-line.under.close.gabc" } }
 		  }
 		]
 	  },
