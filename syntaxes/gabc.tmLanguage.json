@@ -169,7 +169,7 @@
 			"endCaptures": { "0": { "name": "region.notes.close.gabc" } },
 			"patterns": [
 			  { "include": "#gabc-notes" },
-			  { "include": "#nabc" }
+			  { "include": "#nabc-region" }
 			]
 		  }
 		]
@@ -619,12 +619,13 @@
 		  }
 		]
 	  },
-	  "nabc": {
+	  "nabc-region": {
 		"name": "region.nabc.gabc",
-		"begin": "\\|",
-		"end": "[\\|\\)]",
-		"beginCaptures": { "0": { "name": "keyword.control.nabc.open.gabc" } },
-		"endCaptures": { "0": { "name": "keyword.control.nabc.close.gabc" } }
+		"match": "\\|([a-zA-Z0-9->!~/`]+)\\|?",
+		"captures": {
+		  "0": { "name": "keyword.control.nabc.open.gabc" },
+		  "1": { "name": "entity.nabc.gabc" }
+		}
 	  }
 	},
 	"scopeName": "source.gabc"
