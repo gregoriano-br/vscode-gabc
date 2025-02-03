@@ -4,6 +4,7 @@
 	"patterns": [
 	  { "include": "#comments" },
 	  { "include": "#headers" },
+	  { "include": "#gabc-syllable-markup" },
 	  { "include": "#regions" }
 	],
 	"repository": {
@@ -28,8 +29,106 @@
 		  }
 		]
 	  },
-	  "gabc-keywords": {
+	  "gabc-syllable-markup": {
 		"patterns": [
+		  {
+			"contentName": "markup.bold.syllable.gabc",
+			"begin": "<b>",
+			"end": "</b>",
+			"beginCaptures": {
+			  "0": {
+				"name": "entity.name.type.bold.open.gabc"
+			  }
+			},
+			"endCaptures": {
+			  "0": {
+				"name": "entity.name.type.bold.close.gabc"
+			  }
+			}
+		  },
+		  {
+			"contentName": "markup.deleted.colored.syllable.gabc",
+			"begin": "<c>",
+			"end": "</c>",
+			"beginCaptures": {
+			  "0": {
+				"name": "entity.name.type.colored.open.gabc"
+			  }
+			},
+			"endCaptures": {
+			  "0": {
+				"name": "entity.name.type.colored.close.gabc"
+			  }
+			}
+		  },
+		  {
+			"contentName": "markup.italic.syllable.gabc",
+			"begin": "<i>",
+			"end": "</i>",
+			"beginCaptures": {
+			  "0": {
+				"name": "entity.name.type.italic.open.gabc"
+			  }
+			},
+			"endCaptures": {
+			  "0": {
+				"name": "entity.name.type.italic.close.gabc"
+			  }
+			}
+		  },
+		  {
+			"contentName": "markup.other.smallcaps.syllable.gabc",
+			"begin": "<sc>",
+			"end": "</sc>",
+			"beginCaptures": {
+			  "0": {
+				"name": "entity.name.type.smallcaps.open.gabc"
+			  }
+			},
+			"endCaptures": {
+			  "0": {
+				"name": "entity.name.type.smallcaps.close.gabc"
+			  }
+			}
+		  },
+		  {
+			"contentName": "markup.other.teletype.syllable.gabc",
+			"begin": "<tt>",
+			"end": "</tt>",
+			"beginCaptures": {
+			  "0": {
+				"name": "entity.name.type.teletype.open.gabc"
+			  }
+			},
+			"endCaptures": {
+			  "0": {
+				"name": "entity.name.type.teletype.close.gabc"
+			  }
+			}
+		  },
+		  {
+			"contentName": "markup.underline.syllable.gabc",
+			"begin": "<ul>",
+			"end": "</ul>",
+			"beginCaptures": {
+			  "0": {
+				"name": "entity.name.type.underlined.open.gabc"
+			  }
+			},
+			"endCaptures": {
+			  "0": {
+				"name": "entity.name.type.underlined.close.gabc"
+			  }
+			}
+		  }
+		]
+	  },
+	  "gabc-notation": {
+		"patterns": [
+		  {
+			"name": "entity.name.tag.pitch.gabc",
+			"match": "[a-np]"
+		  },
 		  {
 			"name": "variable.parameter.note.shape.accidental.gabc",
 			"match": "[a-np][xy#]"
@@ -99,10 +198,6 @@
 			"match": "[cf]b?[1-5]"
 		  },
 		  {
-			"name": "keyword.other.note.punctum.quadratum.gabc",
-			"match": "[a-np]"
-		  },
-		  {
 			"name": "keyword.other.note.punctum.inclinatum.gabc",
 			"match": "[A-NP][012]?"
 		  },
@@ -160,17 +255,9 @@
 			"beginCaptures": { "0": { "name": "markup.punctuation.paren.open.gabc" } },
 			"endCaptures": { "0": { "name": "markup.punctuation.paren.close.gabc" } },
 			"patterns": [
-			  { "include": "#gabc-keywords" },
+			  { "include": "#gabc-notation" },
 			  { "include": "#nabc" }
 			]
-		  },
-		  {
-			"name": "region.translation.gabc",
-			"begin": "\\[",
-			"end": "\\]",
-			"beginCaptures": { "0": { "name": "markup.punctuation.translation.open" } },
-			"endCaptures": { "0": { "name": "markup.punctuation.translation.close" } },
-			"patterns": [ { "include": "#strings" } ]
 		  },
 		  {
 			"name": "markup.region.above-lines-text.gabc",
