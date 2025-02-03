@@ -190,6 +190,7 @@
 		  { "include": "#gabc-notes-separation-bars" },
 		  { "include": "#gabc-notes-clefs" },
 		  { "include": "#gabc-notes-line-breaks" },
+		  { "include": "#gabc-notes-choral-signs" },
 		  {
 			"name": "constant.character.note.pitch.gabc",
 			"match": "[a-np]"
@@ -444,6 +445,24 @@
 		  {
 			"name": "entity.name.function.break.ragged.gabc",
 			"match": "Z"
+		  }
+		]
+	  },
+	  "gabc-notes-choral-signs": {
+		"patterns": [
+		  {
+			"contentName": "string.choral.sign.gabc",
+			"begin": "\\[ch:",
+			"end": "\\]",
+			"beginCaptures": { "0": { "name": "entity.name.class.choral.sign.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.class.choral.sign.close.gabc" } }
+		  },
+		  {
+			"contentName": "string.choral.sign.nabc.gabc",
+			"begin": "\\[cn:",
+			"end": "\\]",
+			"beginCaptures": { "0": { "name": "entity.name.class.choral.sign.nabc.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.class.choral.sign.nabc.close.gabc" } }
 		  }
 		]
 	  },
