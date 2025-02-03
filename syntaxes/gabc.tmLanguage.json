@@ -32,6 +32,14 @@
 		  }
 		]
 	  },
+	  "latex-verbatim": {
+		"patterns": [
+		  {
+			"name": "entity.name.function.latex.verbatim.gabc",
+			"match": "\\\\[a-zA-Z@]+"
+		  }
+		]
+	  },
 	  "gabc-syllable-markup": {
 		"patterns": [
 		  {
@@ -136,12 +144,7 @@
 			"end": "</v>",
 			"beginCaptures": { "0": { "name": "entity.name.type.verbatim.syllable.open.gabc" } },
 			"endCaptures": { "0": { "name": "entity.name.type.verbatim.syllable.close.gabc" } },
-			"patterns": [
-			  {
-				"name": "entity.name.function.latex.verbatim.syllable.gabc",
-				"match": "\\\\[a-zA-Z@]+"
-			  }
-			]
+			"patterns": [ { "include": "#latex-verbatim" } ]
 		  }
 		]
 	  },
@@ -559,6 +562,34 @@
 			"end": "\\]",
 			"beginCaptures": { "0": { "name": "entity.name.class.above-lines-text.open.gabc" } },
 			"endCaptures": { "0": { "name": "entity.name.class.above-lines-text.close.gabc" } }
+		  }
+		]
+	  },
+	  "gabc-notes-verbatim": {
+		"patterns": [
+		  {
+			"contentName": "entity.other.attribute-name.verbatim.note.gabc",
+			"begin": "\\[nv:",
+			"end": "\\]",
+			"beginCaptures": { "0": { "name": "entity.name.class.verbatim.note.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.class.verbatim.note.close.gabc" } },
+			"patterns": [ { "include": "#latex-verbatim" } ]
+		  },
+		  {
+			"contentName": "entity.other.attribute-name.verbatim.glyph.gabc",
+			"begin": "\\[gv:",
+			"end": "\\]",
+			"beginCaptures": { "0": { "name": "entity.name.class.verbatim.glyph.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.class.verbatim.glyph.close.gabc" } },
+			"patterns": [ { "include": "#latex-verbatim" } ]
+		  },
+		  {
+			"contentName": "entity.other.attribute-name.verbatim.element.gabc",
+			"begin": "\\[ev:",
+			"end": "\\]",
+			"beginCaptures": { "0": { "name": "entity.name.class.verbatim.element.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.class.verbatim.element.close.gabc" } },
+			"patterns": [ { "include": "#latex-verbatim" } ]
 		  }
 		]
 	  },
