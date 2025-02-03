@@ -192,6 +192,7 @@
 		  { "include": "#gabc-notes-line-breaks" },
 		  { "include": "#gabc-notes-choral-signs" },
 		  { "include": "#gabc-notes-braces" },
+		  { "include": "#gabc-notes-stem-length" },
 		  {
 			"name": "constant.character.note.pitch.gabc",
 			"match": "[a-np]"
@@ -496,6 +497,18 @@
 			"end": "\\]",
 			"beginCaptures": { "0": { "name": "entity.name.class.brace.curly.accented.over.open.gabc" } },
 			"endCaptures": { "0": { "name": "entity.name.class.brace.curly.accented.over.close.gabc" } }
+		  }
+		]
+	  },
+	  "gabc-notes-stem-length": {
+		"patterns": [
+		  {
+			"name": "entity.name.class.stem.long.gabc",
+			"match": "\\[ll:1]"
+		  },
+		  {
+			"name": "entity.name.class.stem.short.gabc",
+			"match": "\\[ll:0]"
 		  }
 		]
 	  },
