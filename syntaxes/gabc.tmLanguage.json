@@ -5,6 +5,8 @@
 	  { "include": "#comments" },
 	  { "include": "#headers" },
 	  { "include": "#gabc-syllable-markup" },
+	  { "include": "#gabc-syllable-controls" },
+	  { "include": "#gabc-other" },
 	  { "include": "#regions" }
 	],
 	"repository": {
@@ -35,91 +37,110 @@
 			"contentName": "markup.bold.syllable.gabc",
 			"begin": "<b>",
 			"end": "</b>",
-			"beginCaptures": {
-			  "0": {
-				"name": "entity.name.type.bold.open.gabc"
-			  }
-			},
-			"endCaptures": {
-			  "0": {
-				"name": "entity.name.type.bold.close.gabc"
-			  }
-			}
+			"beginCaptures": { "0": { "name": "entity.name.type.bold.syllable.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.type.bold.syllable.close.gabc" } }
 		  },
 		  {
 			"contentName": "markup.deleted.colored.syllable.gabc",
 			"begin": "<c>",
 			"end": "</c>",
-			"beginCaptures": {
-			  "0": {
-				"name": "entity.name.type.colored.open.gabc"
-			  }
-			},
-			"endCaptures": {
-			  "0": {
-				"name": "entity.name.type.colored.close.gabc"
-			  }
-			}
+			"beginCaptures": { "0": { "name": "entity.name.type.colored.syllable.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.type.colored.syllable.close.gabc" } }
 		  },
 		  {
 			"contentName": "markup.italic.syllable.gabc",
 			"begin": "<i>",
 			"end": "</i>",
-			"beginCaptures": {
-			  "0": {
-				"name": "entity.name.type.italic.open.gabc"
-			  }
-			},
-			"endCaptures": {
-			  "0": {
-				"name": "entity.name.type.italic.close.gabc"
-			  }
-			}
+			"beginCaptures": { "0": { "name": "entity.name.type.italic.syllable.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.type.italic.syllable.close.gabc" } }
 		  },
 		  {
 			"contentName": "markup.other.smallcaps.syllable.gabc",
 			"begin": "<sc>",
 			"end": "</sc>",
-			"beginCaptures": {
-			  "0": {
-				"name": "entity.name.type.smallcaps.open.gabc"
-			  }
-			},
-			"endCaptures": {
-			  "0": {
-				"name": "entity.name.type.smallcaps.close.gabc"
-			  }
-			}
+			"beginCaptures": { "0": { "name": "entity.name.type.smallcaps.syllable.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.type.smallcaps.syllable.close.gabc" } }
 		  },
 		  {
 			"contentName": "markup.other.teletype.syllable.gabc",
 			"begin": "<tt>",
 			"end": "</tt>",
-			"beginCaptures": {
-			  "0": {
-				"name": "entity.name.type.teletype.open.gabc"
-			  }
-			},
-			"endCaptures": {
-			  "0": {
-				"name": "entity.name.type.teletype.close.gabc"
-			  }
-			}
+			"beginCaptures": { "0": { "name": "entity.name.type.teletype.syllable.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.type.teletype.syllable.close.gabc" } }
 		  },
 		  {
 			"contentName": "markup.underline.syllable.gabc",
 			"begin": "<ul>",
 			"end": "</ul>",
-			"beginCaptures": {
-			  "0": {
-				"name": "entity.name.type.underlined.open.gabc"
+			"beginCaptures": { "0": { "name": "entity.name.type.underlined.syllable.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.type.underlined.syllable.close.gabc" } }
+		  }
+		]
+	  },
+	  "gabc-syllable-controls": {
+		"patterns": [
+		  {
+			"contentName": "markup.other.clear.syllable.gabc",
+			"begin": "<clear>",
+			"end": "</clear>",
+			"beginCaptures": { "0": { "name": "entity.name.type.clear.syllable.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.type.clear.syllable.close.gabc" } }
+		  },
+		  {
+			"contentName": "markup.italic.elision.syllable.gabc",
+			"begin": "<e>",
+			"end": "</e>",
+			"beginCaptures": { "0": { "name": "entity.name.type.elision.syllable.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.type.elision.syllable.close.gabc" } }
+		  },
+		  {
+			"contentName": "markup.other.euouae.syllable.gabc",
+			"begin": "<eu>",
+			"end": "</eu>",
+			"beginCaptures": { "0": { "name": "entity.name.type.euouae.syllable.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.type.euouae.syllable.close.gabc" } }
+		  },
+		  {
+			"contentName": "markup.other.no-line-break.syllable.gabc",
+			"begin": "<nlba>",
+			"end": "</nlba>",
+			"beginCaptures": { "0": { "name": "entity.name.type.no-line-break.syllable.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.type.no-line-break.syllable.close.gabc" } }
+		  },
+		  {
+			"name": "entity.name.type.protrusion.syllable.gabc",
+			"match": "<pr(:.?[0-9])?/?>"
+		  }
+		]
+	  },
+	  "gabc-other": {
+		"patterns": [
+		  {
+			"contentName": "markup.other.above-lines-text.syllable.gabc",
+			"begin": "<alt>",
+			"end": "</alt>",
+			"beginCaptures": { "0": { "name": "entity.name.type.above-lines-text.syllable.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.type.above-lines-text.syllable.close.gabc" } }
+		  },
+		  {
+			"contentName": "markup.other.special.syllable.gabc",
+			"begin": "<sp>",
+			"end": "</sp>",
+			"beginCaptures": { "0": { "name": "entity.name.type.special.syllable.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.type.special.syllable.close.gabc" } }
+		  },
+		  {
+			"contentName": "markup.other.verbatim.syllable.gabc",
+			"begin": "<v>",
+			"end": "</v>",
+			"beginCaptures": { "0": { "name": "entity.name.type.verbatim.syllable.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.type.verbatim.syllable.close.gabc" } },
+			"patterns": [
+			  {
+				"name": "entity.name.function.latex.verbatim.syllable.gabc",
+				"match": "\\\\[a-zA-Z@]+"
 			  }
-			},
-			"endCaptures": {
-			  "0": {
-				"name": "entity.name.type.underlined.close.gabc"
-			  }
-			}
+			]
 		  }
 		]
 	  },
@@ -258,34 +279,6 @@
 			  { "include": "#gabc-notation" },
 			  { "include": "#nabc" }
 			]
-		  },
-		  {
-			"name": "markup.region.above-lines-text.gabc",
-			"begin": "<alt>",
-			"end": "</alt>"
-		  },
-		  {
-			"name": "markup.region.gregoriocolor.gabc",
-			"begin": "<c>",
-			"end": "</c>"
-		  },
-		  {
-			"name": "region.nonbreaking.gabc",
-			"begin": "<nlba>",
-			"end": "</nlba>",
-			"beginCaptures": { "0": { "name": "variable.parameter.region.nonbreaking.open.gabc" } },
-			"endCaptures": { "0": { "name": "variable.parameter.region.nonbreaking.open.gabc" } },
-			"patterns": [ { "include": "#regions" } ]
-		  },
-		  {
-			"name": "markup.region.verbatim.gabc",
-			"begin": "<v>",
-			"end": "</v>"
-		  },
-		  {
-			"name": "markup.region.special.gabc",
-			"begin": "<sp>",
-			"end": "</sp>"
 		  }
 		]
 	  }
