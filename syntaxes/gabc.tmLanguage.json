@@ -191,6 +191,7 @@
 		  { "include": "#gabc-notes-clefs" },
 		  { "include": "#gabc-notes-line-breaks" },
 		  { "include": "#gabc-notes-choral-signs" },
+		  { "include": "#gabc-notes-braces" },
 		  {
 			"name": "constant.character.note.pitch.gabc",
 			"match": "[a-np]"
@@ -463,6 +464,38 @@
 			"end": "\\]",
 			"beginCaptures": { "0": { "name": "entity.name.class.choral.sign.nabc.open.gabc" } },
 			"endCaptures": { "0": { "name": "entity.name.class.choral.sign.nabc.close.gabc" } }
+		  }
+		]
+	  },
+	  "gabc-notes-braces": {
+		"patterns": [
+		  {
+			"contentName": "entity.other.attribute-name.brace.rounded.over.gabc",
+			"begin": "\\[ob:",
+			"end": "\\]",
+			"beginCaptures": { "0": { "name": "entity.name.class.brace.rounded.over.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.class.brace.rounded.over.close.gabc" } }
+		  },
+		  {
+			"contentName": "entity.other.attribute-name.brace.rounded.under.gabc",
+			"begin": "\\[ub:",
+			"end": "\\]",
+			"beginCaptures": { "0": { "name": "entity.name.class.brace.rounded.under.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.class.brace.rounded.under.close.gabc" } }
+		  },
+		  {
+			"contentName": "entity.other.attribute-name.brace.curly.over.gabc",
+			"begin": "\\[ocb:",
+			"end": "\\]",
+			"beginCaptures": { "0": { "name": "entity.name.class.brace.curly.over.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.class.brace.curly.over.close.gabc" } }
+		  },
+		  {
+			"contentName": "entity.other.attribute-name.brace.curly.accented.over.gabc",
+			"begin": "\\[ocba:",
+			"end": "\\]",
+			"beginCaptures": { "0": { "name": "entity.name.class.brace.curly.accented.over.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.class.brace.curly.accented.over.close.gabc" } }
 		  }
 		]
 	  },
