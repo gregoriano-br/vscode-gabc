@@ -186,6 +186,10 @@
 	  "gabc-notes": {
 		"patterns": [
 		  { "include": "#gabc-notes-spacing" },
+		  { "include": "#gabc-notes-additional-symbols" },
+		  { "include": "#gabc-notes-separation-bars" },
+		  { "include": "#gabc-notes-clefs" },
+		  { "include": "#gabc-notes-line-breaks" },
 		  {
 			"name": "constant.character.note.pitch.gabc",
 			"match": "[a-np]"
@@ -290,46 +294,6 @@
 			"match": "-"
 		  },
 		  {
-			"name": "variable.parameter.clef.gabc",
-			"match": "[cf]b?[1-5]"
-		  },
-		  {
-			"name": "variable.parameter.symbol.episema.gabc",
-			"match": "_[0-5]*"
-		  },
-		  {
-			"name": "variable.parameter.symbol.ictus.gabc",
-			"match": "['][01]?"
-		  },
-		  {
-			"name": "variable.parameter.symbol.punctum-mora-vocis.gabc",
-			"match": "\\."
-		  },
-		  {
-			"name": "variable.parameter.separation.virgula.gabc",
-			"match": "`0?"
-		  },
-		  {
-			"name": "variable.parameter.separation.divisio.minimis.gabc",
-			"match": "\\^0?"
-		  },
-		  {
-			"name": "variable.parameter.separation.divisio.minima.gabc",
-			"match": ",[0_]?"
-		  },
-		  {
-			"name": "variable.parameter.separation.divisio.minor.gabc",
-			"match": ";[1-6]?"
-		  },
-		  {
-			"name": "variable.parameter.separation.divisio.finalis.gabc",
-			"match": "::"
-		  },
-		  {
-			"name": "variable.parameter.separation.divisio.maior.gabc",
-			"match": ":\\??"
-		  },
-		  {
 			"name": "keyword.control.note.fusion.gabc",
 			"match": "@"
 		  }
@@ -367,6 +331,119 @@
 		  {
 			"name": "variable.parameter.spacing.zero.gabc",
 			"match": "!"
+		  }
+		]
+	  },
+	  "gabc-notes-additional-symbols": {
+		"patterns": [
+		  {
+			"name": "variable.parameter.symbol.punctum-mora-vocis.gabc",
+			"match": "\\."
+		  },
+		  {
+			"name": "variable.parameter.symbol.episema.gabc",
+			"match": "_[0-5]*"
+		  },
+		  {
+			"name": "variable.parameter.symbol.ictus.gabc",
+			"match": "'[01]?"
+		  },
+		  {
+			"name": "variable.parameter.symbol.accent.above.gabc",
+			"match": "r1"
+		  },
+		  {
+			"name": "variable.parameter.symbol.accent.grave.above.gabc",
+			"match": "r2"
+		  },
+		  {
+			"name": "variable.parameter.symbol.circle.above.gabc",
+			"match": "r3"
+		  },
+		  {
+			"name": "variable.parameter.symbol.semicircle.lower.above.gabc",
+			"match": "r4"
+		  },
+		  {
+			"name": "variable.parameter.symbol.semicircle.upper.above.gabc",
+			"match": "r5"
+		  },
+		  {
+			"name": "variable.parameter.symbol.musica.ficta.flat.gabc",
+			"match": "r6"
+		  },
+		  {
+			"name": "variable.parameter.symbol.musica.ficta.natural.gabc",
+			"match": "r7"
+		  },
+		  {
+			"name": "variable.parameter.symbol.musica.ficta.sharp.gabc",
+			"match": "r8"
+		  }
+		]
+	  },
+	  "gabc-notes-separation-bars": {
+		"patterns": [
+		  {
+			"name": "variable.parameter.separation.virgula.gabc",
+			"match": "`0?"
+		  },
+		  {
+			"name": "variable.parameter.separation.divisio.minimis.gabc",
+			"match": "\\^0?"
+		  },
+		  {
+			"name": "variable.parameter.separation.divisio.minima.gabc",
+			"match": ",[0_]?"
+		  },
+		  {
+			"name": "variable.parameter.separation.divisio.minor.gabc",
+			"match": ";[1-6]?"
+		  },
+		  {
+			"name": "variable.parameter.separation.divisio.finalis.gabc",
+			"match": "::"
+		  },
+		  {
+			"name": "variable.parameter.separation.divisio.maior.gabc",
+			"match": ":\\??"
+		  }
+		]
+	  },
+	  "gabc-notes-clefs": {
+		"patterns": [
+		  {
+			"name": "variable.parameter.clef.gabc",
+			"match": "[cf]b?([1-5])",
+			"captures": { "1": { "name": "constant.numeric.clef.position.gabc" } }
+		  }
+		]
+	  },
+	  "gabc-notes-line-breaks": {
+		"patterns": [
+		  {
+			"name": "entity.name.function.break.justified.forced-custos.gabc",
+			"match": "z\\+"
+		  },
+		  {
+			"name": "entity.name.function.break.justified.no-custos.gabc",
+			"match": "z\\-"
+		  },
+		  {
+			"name": "entity.name.function.break.justified.gabc",
+			"match": "z"
+		  },
+		  {
+			"name": "entity.name.function.break.ragged.forced-custos.gabc",
+			"match": "Z\\+"
+		  },
+		  {
+			"name": "entity.name.function.break.ragged.no-custos.gabc",
+			"match": "Z\\-"
+		  },
+		  {
+			"name": "entity.name.function.break.ragged.gabc",
+			"match": "Z"
 		  }
 		]
 	  },
