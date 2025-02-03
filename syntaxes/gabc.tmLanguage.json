@@ -199,6 +199,7 @@
 		  { "include": "#gabc-notes-custom-ledger-lines" },
 		  { "include": "#gabc-notes-slurs" },
 		  { "include": "#gabc-notes-above-lines-text" },
+		  { "include": "#gabc-notes-macros" },
 		  {
 			"name": "constant.character.note.pitch.gabc",
 			"match": "[a-np]"
@@ -590,6 +591,31 @@
 			"beginCaptures": { "0": { "name": "entity.name.class.verbatim.element.open.gabc" } },
 			"endCaptures": { "0": { "name": "entity.name.class.verbatim.element.close.gabc" } },
 			"patterns": [ { "include": "#latex-verbatim" } ]
+		  }
+		]
+	  },
+	  "gabc-notes-macros": {
+		"patterns": [
+		  {
+			"name": "constant.numeric.macro.note.gabc",
+			"begin": "\\[nm",
+			"end": "\\]",
+			"beginCaptures": { "0": { "name": "entity.name.function.macro.note.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.function.macro.note.close.gabc" } }
+		  },
+		  {
+			"name": "constant.numeric.macro.glyph.gabc",
+			"begin": "\\[gm",
+			"end": "\\]",
+			"beginCaptures": { "0": { "name": "entity.name.function.macro.glyph.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.function.macro.glyph.close.gabc" } }
+		  },
+		  {
+			"name": "constant.numeric.macro.element.gabc",
+			"begin": "\\[em",
+			"end": "\\]",
+			"beginCaptures": { "0": { "name": "entity.name.function.macro.element.open.gabc" } },
+			"endCaptures": { "0": { "name": "entity.name.function.macro.element.close.gabc" } }
 		  }
 		]
 	  },
