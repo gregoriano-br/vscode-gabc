@@ -399,27 +399,27 @@
 	  "gabc-notes-separation-bars": {
 		"patterns": [
 		  {
-			"name": "variable.parameter.separation.virgula.gabc",
+			"name": "punctuation.separator.virgula.gabc",
 			"match": "`0?"
 		  },
 		  {
-			"name": "variable.parameter.separation.divisio.minimis.gabc",
+			"name": "punctuation.separator.divisio.minimis.gabc",
 			"match": "\\^0?"
 		  },
 		  {
-			"name": "variable.parameter.separation.divisio.minima.gabc",
+			"name": "punctuation.separator.divisio.minima.gabc",
 			"match": ",[0_]?"
 		  },
 		  {
-			"name": "variable.parameter.separation.divisio.minor.gabc",
+			"name": "punctuation.separator.divisio.minor.gabc",
 			"match": ";[1-6]?"
 		  },
 		  {
-			"name": "variable.parameter.separation.divisio.finalis.gabc",
+			"name": "punctuation.separator.divisio.finalis.gabc",
 			"match": "::"
 		  },
 		  {
-			"name": "variable.parameter.separation.divisio.maior.gabc",
+			"name": "punctuation.separator.divisio.maior.gabc",
 			"match": ":\\??"
 		  }
 		]
