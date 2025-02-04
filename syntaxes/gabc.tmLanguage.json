@@ -67,7 +67,7 @@
 					"begin": "(<)c(>)",
 					"end": "(</)c(>)",
 					"beginCaptures": {
-						"0": { "name": "invalid.colored.syllable.open.gabc" },
+						"0": { "name": "string.colored.syllable.open.gabc" },
 						"1": { "name": "punctuation.definition.tag.begin.colored.syllable.open.gabc" },
 						"2": { "name": "punctuation.definition.tag.end.colored.syllable.open.gabc" }
 					},
@@ -390,53 +390,53 @@
 					"captures": { "1": { "name": "constant.numeric.note.pitch.punctum-inclinatum.leaning.gabc" } }
 				},
 				{
-					"name": "constant.character.escape.note.shape.oriscus.gabc",
+					"name": "variable.parameter.note.shape.oriscus.gabc",
 					"match": "o([01]?)",
 					"captures": { "1": { "name": "constant.numeric.note.shape.oriscus.variant.gabc" } }
 				},
 				{
-					"name": "constant.character.escape.note.shape.oriscus.scapus.gabc",
+					"name": "variable.parameter.note.shape.oriscus.scapus.gabc",
 					"match": "O([01]?)",
 					"captures": { "1": { "name": "constant.numeric.note.shape.oriscus.variant.gabc" } }
 				},
 				{
-					"name": "constant.character.escape.note.shape.pes.quadratum.gabc",
+					"name": "variable.parameter.note.shape.pes.quadratum.gabc",
 					"match": "q"
 				},
 				{
-					"name": "constant.character.escape.note.shape.quilisma.gabc",
+					"name": "variable.parameter.note.shape.quilisma.gabc",
 					"match": "w"
 				},
 				{
-					"name": "constant.character.escape.note.shape.quilisma.quadratum.gabc",
+					"name": "variable.parameter.note.shape.quilisma.quadratum.gabc",
 					"match": "W"
 				},
 				{
-					"name": "constant.character.escape.note.shape.trivirga.gabc",
+					"name": "variable.parameter.note.shape.trivirga.gabc",
 					"match": "vvv"
 				},
 				{
-					"name": "constant.character.escape.note.shape.bivirga.gabc",
+					"name": "variable.parameter.note.shape.bivirga.gabc",
 					"match": "vv"
 				},
 				{
-					"name": "constant.character.escape.note.shape.virga.gabc",
+					"name": "variable.parameter.note.shape.virga.gabc",
 					"match": "v"
 				},
 				{
-					"name": "constant.character.escape.note.shape.virga.reversa.gabc",
+					"name": "variable.parameter.note.shape.virga.reversa.gabc",
 					"match": "V"
 				},
 				{
-					"name": "constant.character.escape.note.shape.tristropha.gabc",
+					"name": "variable.parameter.note.shape.tristropha.gabc",
 					"match": "sss"
 				},
 				{
-					"name": "constant.character.escape.note.shape.distropha.gabc",
+					"name": "variable.parameter.note.shape.distropha.gabc",
 					"match": "ss"
 				},
 				{
-					"name": "constant.character.escape.note.shape.stropha.gabc",
+					"name": "variable.parameter.note.shape.stropha.gabc",
 					"match": "s"
 				},
 				{
@@ -456,15 +456,15 @@
 					"match": "="
 				},
 				{
-					"name": "constant.character.escape.note.shape.cavum.surrounded.gabc",
+					"name": "variable.parameter.note.shape.cavum.surrounded.gabc",
 					"match": "r0"
 				},
 				{
-					"name": "constant.character.escape.note.shape.cavum.gabc",
+					"name": "variable.parameter.note.shape.cavum.gabc",
 					"match": "r"
 				},
 				{
-					"name": "constant.character.escape.note.shape.quadratum.surrounded.gabc",
+					"name": "variable.parameter.note.shape.quadratum.surrounded.gabc",
 					"match": "R"
 				},
 				{
