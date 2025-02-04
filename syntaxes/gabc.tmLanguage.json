@@ -810,9 +810,249 @@
 			"name": "region.nabc.gabc",
 			"match": "\\|([a-zA-Z0-9->!~/`]+)\\|?",
 			"captures": {
-				"0": { "name": "keyword.control.nabc.toggle.gabc" },
-				"1": { "name": "entity.nabc.gabc" }
+				"0": { "name": "other.nabc.toggle.gabc" },
+				"1": {
+					"patterns": [
+						{ "include": "#nabc-neums" },
+						{ "include": "#nabc-glyph-modifiers" },
+						{ "include": "#nabc-pitch" },
+						{ "include": "#nabc-subpunctis-prepunctis" },
+						{ "include": "#nabc-significant-letters" },
+						{ "include": "#nabc-spacing" }
+					]
+				}
 			}
+		},
+		"nabc-region-experimental": {
+			"name": "region.nabc.gabc",
+			"match": "\\|(?:([`\/]+)?([a-z]{2})([GMS!->~][1-9]?)?(h[an-p])?((?:su|pp)[a-z]?[1-9])*(ls[a-z]+[1-9])*)+\\|?",
+			"captures": {
+				"0": { "name": "other.nabc.toggle.gabc" },
+				"1": { "patterns": [ { "include": "#nabc-spacing" } ] },
+				"2": { "patterns": [ { "include": "#nabc-neums" } ] },
+				"3": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
+				"4": { "patterns": [ { "include": "#nabc-pitch" } ] },
+				"5": { "patterns": [ { "include": "#nabc-subpunctis-prepunctis" } ] },
+				"6": { "patterns": [ { "include": "#nabc-significant-letters" } ] }
+			}
+		},
+		"nabc-neums": {
+			"patterns": [
+				{
+					"name": "keyword.control.nabc.virga.gabc",
+					"match": "vi"
+				},
+				{
+					"name": "keyword.control.nabc.virga.strata.gabc",
+					"match": "vs"
+				},
+				{
+					"name": "keyword.control.nabc.punctum.gabc",
+					"match": "pu"
+				},
+				{
+					"name": "keyword.control.nabc.gravis.gabc",
+					"match": "gr"
+				},
+				{
+					"name": "keyword.control.nabc.tractulus.gabc",
+					"match": "ta"
+				},
+				{
+					"name": "keyword.control.nabc.clivis.gabc",
+					"match": "cl"
+				},
+				{
+					"name": "keyword.control.nabc.pes.gabc",
+					"match": "pe"
+				},
+				{
+					"name": "keyword.control.nabc.pes.quassus.gabc",
+					"match": "pq"
+				},
+				{
+					"name": "keyword.control.nabc.pes.stratus.gabc",
+					"match": "pt"
+				},
+				{
+					"name": "keyword.control.nabc.porrectus.gabc",
+					"match": "po"
+				},
+				{
+					"name": "keyword.control.nabc.porrectus.flexus.gabc",
+					"match": "pf"
+				},
+				{
+					"name": "keyword.control.nabc.torculus.gabc",
+					"match": "to"
+				},
+				{
+					"name": "keyword.control.nabc.torculus.resupinus.gabc",
+					"match": "tr"
+				},
+				{
+					"name": "keyword.control.nabc.climacus.gabc",
+					"match": "ci"
+				},
+				{
+					"name": "keyword.control.nabc.scandicus.gabc",
+					"match": "sc"
+				},
+				{
+					"name": "keyword.control.nabc.scandicus.flexus.gabc",
+					"match": "sf"
+				},
+				{
+					"name": "keyword.control.nabc.stropha.gabc",
+					"match": "st"
+				},
+				{
+					"name": "keyword.control.nabc.distropha.gabc",
+					"match": "ds"
+				},
+				{
+					"name": "keyword.control.nabc.tristropha.gabc",
+					"match": "ts"
+				},
+				{
+					"name": "keyword.control.nabc.trigonus.gabc",
+					"match": "tg"
+				},
+				{
+					"name": "keyword.control.nabc.bivirga.gabc",
+					"match": "bv"
+				},
+				{
+					"name": "keyword.control.nabc.trivirga.gabc",
+					"match": "tv"
+				},
+				{
+					"name": "keyword.control.nabc.pressus.maior.gabc",
+					"match": "pr"
+				},
+				{
+					"name": "keyword.control.nabc.pressus.minor.gabc",
+					"match": "pi"
+				},
+				{
+					"name": "keyword.control.nabc.oriscus.gabc",
+					"match": "or"
+				},
+				{
+					"name": "keyword.control.nabc.salicus.gabc",
+					"match": "sa"
+				},
+				{
+					"name": "keyword.control.nabc.pes.quilisma.3-loops.gabc",
+					"match": "ql"
+				},
+				{
+					"name": "keyword.control.nabc.pes.quilisma.2-loops.gabc",
+					"match": "qi"
+				},
+				{
+					"name": "keyword.control.nabc.uncinus.gabc",
+					"match": "un"
+				},
+				{
+					"name": "keyword.control.nabc.oriscus.clivis.gabc",
+					"match": "oc"
+				}
+			]
+		},
+		"nabc-glyph-modifiers": {
+			"patterns": [
+				{
+					"name": "variable.parameter.nabc.modification.mark.gabc",
+					"match": "S[1-9]?"
+				},
+				{
+					"name": "variable.parameter.nabc.modification.group.gabc",
+					"match": "G[1-9]?"
+				},
+				{
+					"name": "variable.parameter.nabc.modification.melodic.gabc",
+					"match": "M[1-9]?"
+				},
+				{
+					"name": "variable.parameter.nabc.modification.episema.gabc",
+					"match": "-"
+				},
+				{
+					"name": "variable.parameter.nabc.liquescence.augmentive.gabc",
+					"match": ">[1-9]?"
+				},
+				{
+					"name": "variable.parameter.nabc.liquescence.diminutive.gabc",
+					"match": "~"
+				},
+				{
+					"name": "variable.parameter.nabc.connector.gabc",
+					"match": "!"
+				}
+			]
+		},
+		"nabc-pitch": {
+			"patterns": [
+				{
+					"name": "string.nabc.pitch.gabc",
+					"match": "h[an-p]"
+				}
+			]
+		},
+		"nabc-subpunctis-prepunctis": {
+			"patterns": [
+				{
+					"name": "variable.parameter.nabc.prepunctis.gabc",
+					"match": "pp[nqtuvwxyz]?([1-9])",
+					"captures": { "1": { "name": "constant.numeric.nabc.prepunctis.factor.gabc" } }
+				},
+				{
+					"name": "variable.parameter.nabc.subpunctis.gabc",
+					"match": "su[nqtuvwxyz]?([1-9])",
+					"captures": { "1": { "name": "constant.numeric.nabc.subpunctis.factor.gabc" } }
+				}
+			]
+		},
+		"nabc-significant-letters": {
+			"patterns": [
+				{
+					"name": "entity.name.class.nabc.letter.significant.gabc",
+					"match": "ls([a-z]+)([1-9])",
+					"captures": {
+						"1": { "name": "constant.character.nabc.letter.significant.name.gabc" },
+						"2": { "name": "constant.numeric.nabc.letter.significant.position.gabc" }
+					}
+				},
+				{
+					"name": "entity.name.class.nabc.letter.tironian.gabc",
+					"match": "lt([a-z]+)([1-9])",
+					"captures": {
+						"1": { "name": "constant.character.nabc.letter.significant.name.gabc" },
+						"2": { "name": "constant.numeric.nabc.letter.significant.position.gabc" }
+					}
+				}
+			]
+		},
+		"nabc-spacing": {
+			"patterns": [
+				{
+					"name": "variable.parameter.spacing.right.large.gabc",
+					"match": "//"
+				},
+				{
+					"name": "variable.parameter.spacing.right.small.gabc",
+					"match": "/"
+				},
+				{
+					"name": "variable.parameter.spacing.left.large.gabc",
+					"match": "``"
+				},
+				{
+					"name": "variable.parameter.spacing.left.small.gabc",
+					"match": "`"
+				}
+			]
 		}
 	},
 	"scopeName": "source.gabc"
