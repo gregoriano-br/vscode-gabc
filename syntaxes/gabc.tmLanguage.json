@@ -201,6 +201,18 @@
 		  { "include": "#gabc-notes-above-lines-text" },
 		  { "include": "#gabc-notes-macros" },
 		  {
+			"name": "variable.parameter.note.accident.sharp.gabc",
+			"match": "[a-np]#"
+		  },
+		  {
+			"name": "variable.parameter.note.accident.flat.gabc",
+			"match": "[a-np]x"
+		  },
+		  {
+			"name": "variable.parameter.note.accident.natural.gabc",
+			"match": "[a-np]y"
+		  },
+		  {
 			"name": "constant.character.note.pitch.gabc",
 			"match": "[a-np]"
 		  },
@@ -286,18 +298,6 @@
 		  {
 			"name": "constant.character.escape.note.shape.quadratum.surrounded.gabc",
 			"match": "R"
-		  },
-		  {
-			"name": "variable.parameter.note.accidental.sharp.gabc",
-			"match": "[a-np]#"
-		  },
-		  {
-			"name": "variable.parameter.note.accidental.flat.gabc",
-			"match": "[a-np]x"
-		  },
-		  {
-			"name": "variable.parameter.note.accidental.natural.gabc",
-			"match": "[a-np]y"
 		  },
 		  {
 			"name": "variable.parameter.note.shape.initio-debilis.gabc",
