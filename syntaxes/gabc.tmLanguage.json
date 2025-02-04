@@ -362,6 +362,7 @@
 				{ "include": "#gabc-notes-stem-length" },
 				{ "include": "#gabc-notes-custom-ledger-lines" },
 				{ "include": "#gabc-notes-slurs" },
+				{ "include": "#gabc-notes-horizontal-episema-tuning" },
 				{ "include": "#gabc-notes-above-lines-text" },
 				{ "include": "#gabc-notes-macros" },
 				{
@@ -720,6 +721,24 @@
 					"end": "\\]",
 					"beginCaptures": { "0": { "name": "entity.name.class.slur.under.open.gabc" } },
 					"endCaptures": { "0": { "name": "entity.name.class.slur.under.close.gabc" } }
+				}
+			]
+		},
+		"gabc-notes-horizontal-episema-tuning": {
+			"patterns": [
+				{
+					"contentName": "string.episema.over.gabc",
+					"begin": "\\[oh:?",
+					"end": "\\]",
+					"beginCaptures": { "0": { "name": "entity.name.class.episema.over.open.gabc" } },
+					"endCaptures": { "0": { "name": "entity.name.class.episema.over.close.gabc" } }
+				},
+				{
+					"contentName": "string.episema.under.gabc",
+					"begin": "\\[uh:?",
+					"end": "\\]",
+					"beginCaptures": { "0": { "name": "entity.name.class.episema.under.open.gabc" } },
+					"endCaptures": { "0": { "name": "entity.name.class.episema.under.close.gabc" } }
 				}
 			]
 		},
