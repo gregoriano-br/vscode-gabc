@@ -478,28 +478,28 @@
 	  "gabc-notes-braces": {
 		"patterns": [
 		  {
-			"contentName": "entity.other.attribute-name.brace.rounded.over.gabc",
+			"contentName": "string.brace.rounded.over.gabc",
 			"begin": "\\[ob:",
 			"end": "\\]",
 			"beginCaptures": { "0": { "name": "entity.name.class.brace.rounded.over.open.gabc" } },
 			"endCaptures": { "0": { "name": "entity.name.class.brace.rounded.over.close.gabc" } }
 		  },
 		  {
-			"contentName": "entity.other.attribute-name.brace.rounded.under.gabc",
+			"contentName": "string.brace.rounded.under.gabc",
 			"begin": "\\[ub:",
 			"end": "\\]",
 			"beginCaptures": { "0": { "name": "entity.name.class.brace.rounded.under.open.gabc" } },
 			"endCaptures": { "0": { "name": "entity.name.class.brace.rounded.under.close.gabc" } }
 		  },
 		  {
-			"contentName": "entity.other.attribute-name.brace.curly.over.gabc",
+			"contentName": "string.brace.curly.over.gabc",
 			"begin": "\\[ocb:",
 			"end": "\\]",
 			"beginCaptures": { "0": { "name": "entity.name.class.brace.curly.over.open.gabc" } },
 			"endCaptures": { "0": { "name": "entity.name.class.brace.curly.over.close.gabc" } }
 		  },
 		  {
-			"contentName": "entity.other.attribute-name.brace.curly.accented.over.gabc",
+			"contentName": "string.brace.curly.accented.over.gabc",
 			"begin": "\\[ocba:",
 			"end": "\\]",
 			"beginCaptures": { "0": { "name": "entity.name.class.brace.curly.accented.over.open.gabc" } },
@@ -522,14 +522,14 @@
 	  "gabc-notes-custom-ledger-lines": {
 		"patterns": [
 		  {
-			"contentName": "entity.other.attribute-name.custom-ledger-line.over.gabc",
+			"contentName": "string.custom-ledger-line.over.gabc",
 			"begin": "\\[oll:",
 			"end": "\\]",
 			"beginCaptures": { "0": { "name": "entity.name.class.custom-ledger-line.over.open.gabc" } },
 			"endCaptures": { "0": { "name": "entity.name.class.custom-ledger-line.over.close.gabc" } }
 		  },
 		  {
-			"contentName": "entity.other.attribute-name.custom-ledger-line.under.gabc",
+			"contentName": "string.custom-ledger-line.under.gabc",
 			"begin": "\\[ull:",
 			"end": "\\]",
 			"beginCaptures": { "0": { "name": "entity.name.class.custom-ledger-line.under.open.gabc" } },
@@ -540,14 +540,14 @@
 	  "gabc-notes-slurs": {
 		"patterns": [
 		  {
-			"contentName": "entity.other.attribute-name.slur.over.gabc",
+			"contentName": "string.slur.over.gabc",
 			"begin": "\\[oslur:",
 			"end": "\\]",
 			"beginCaptures": { "0": { "name": "entity.name.class.slur.over.open.gabc" } },
 			"endCaptures": { "0": { "name": "entity.name.class.slur.over.close.gabc" } }
 		  },
 		  {
-			"contentName": "entity.other.attribute-name.slur.under.gabc",
+			"contentName": "string.slur.under.gabc",
 			"begin": "\\[uslur:",
 			"end": "\\]",
 			"beginCaptures": { "0": { "name": "entity.name.class.slur.under.open.gabc" } },
@@ -569,7 +569,7 @@
 	  "gabc-notes-verbatim": {
 		"patterns": [
 		  {
-			"contentName": "entity.other.attribute-name.verbatim.note.gabc",
+			"contentName": "other.verbatim.note.gabc",
 			"begin": "\\[nv:",
 			"end": "\\]",
 			"beginCaptures": { "0": { "name": "entity.name.class.verbatim.note.open.gabc" } },
@@ -577,7 +577,7 @@
 			"patterns": [ { "include": "#latex-verbatim" } ]
 		  },
 		  {
-			"contentName": "entity.other.attribute-name.verbatim.glyph.gabc",
+			"contentName": "other.verbatim.glyph.gabc",
 			"begin": "\\[gv:",
 			"end": "\\]",
 			"beginCaptures": { "0": { "name": "entity.name.class.verbatim.glyph.open.gabc" } },
@@ -585,7 +585,7 @@
 			"patterns": [ { "include": "#latex-verbatim" } ]
 		  },
 		  {
-			"contentName": "entity.other.attribute-name.verbatim.element.gabc",
+			"contentName": "other.verbatim.element.gabc",
 			"begin": "\\[ev:",
 			"end": "\\]",
 			"beginCaptures": { "0": { "name": "entity.name.class.verbatim.element.open.gabc" } },
@@ -623,7 +623,7 @@
 		"name": "region.nabc.gabc",
 		"match": "\\|([a-zA-Z0-9->!~/`]+)\\|?",
 		"captures": {
-		  "0": { "name": "keyword.control.nabc.open.gabc" },
+		  "0": { "name": "keyword.control.nabc.toggle.gabc" },
 		  "1": { "name": "entity.nabc.gabc" }
 		}
 	  }
