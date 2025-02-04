@@ -201,6 +201,10 @@
 		  { "include": "#gabc-notes-above-lines-text" },
 		  { "include": "#gabc-notes-macros" },
 		  {
+			"name": "variable.parameter.symbol.custos.gabc",
+			"match": "[a-np]\\+"
+		  },
+		  {
 			"name": "variable.parameter.note.accident.sharp.gabc",
 			"match": "[a-np]#"
 		  },
