@@ -2,635 +2,799 @@
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "GABC",
 	"patterns": [
-	  { "include": "#comments" },
-	  { "include": "#headers" },
-	  { "include": "#gabc-syllable-markup" },
-	  { "include": "#gabc-syllable-controls" },
-	  { "include": "#gabc-syllable-other" },
-	  { "include": "#gabc-syllable-translation" },
-	  { "include": "#gabc-notes-region" }
+		{ "include": "#comments" },
+		{ "include": "#headers" },
+		{ "include": "#gabc-syllable-markup" },
+		{ "include": "#gabc-syllable-controls" },
+		{ "include": "#gabc-syllable-other" },
+		{ "include": "#gabc-syllable-translation" },
+		{ "include": "#gabc-notes-region" }
 	],
 	"repository": {
-	  "comments": {
-		"patterns": [
-		  {
-			"name": "comment.line.percentage.gabc",
-			"begin": "%",
-			"end": "$"
-		  }
-		]
-	  },
-	  "headers": {
-		"patterns": [
-		  {
-			"name": "entity.header.gabc",
-			"match": "^([^:]+): *(.*);$",
-			"captures": {
-			  "1": { "name": "keyword.control.header.key.gabc" },
-			  "2": { "name": "string.header.value.gabc" }
-			}
-		  }
-		]
-	  },
-	  "latex-verbatim": {
-		"patterns": [
-		  {
-			"name": "entity.name.function.latex.verbatim.gabc",
-			"match": "\\\\[a-zA-Z@]+"
-		  }
-		]
-	  },
-	  "gabc-syllable-markup": {
-		"patterns": [
-		  {
-			"contentName": "markup.bold.syllable.gabc",
-			"begin": "<b>",
-			"end": "</b>",
-			"beginCaptures": { "0": { "name": "entity.name.type.bold.syllable.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.type.bold.syllable.close.gabc" } }
-		  },
-		  {
-			"contentName": "markup.deleted.colored.syllable.gabc",
-			"begin": "<c>",
-			"end": "</c>",
-			"beginCaptures": { "0": { "name": "entity.name.type.colored.syllable.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.type.colored.syllable.close.gabc" } }
-		  },
-		  {
-			"contentName": "markup.italic.syllable.gabc",
-			"begin": "<i>",
-			"end": "</i>",
-			"beginCaptures": { "0": { "name": "entity.name.type.italic.syllable.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.type.italic.syllable.close.gabc" } }
-		  },
-		  {
-			"contentName": "markup.other.smallcaps.syllable.gabc",
-			"begin": "<sc>",
-			"end": "</sc>",
-			"beginCaptures": { "0": { "name": "entity.name.type.smallcaps.syllable.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.type.smallcaps.syllable.close.gabc" } }
-		  },
-		  {
-			"contentName": "markup.other.teletype.syllable.gabc",
-			"begin": "<tt>",
-			"end": "</tt>",
-			"beginCaptures": { "0": { "name": "entity.name.type.teletype.syllable.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.type.teletype.syllable.close.gabc" } }
-		  },
-		  {
-			"contentName": "markup.underline.syllable.gabc",
-			"begin": "<ul>",
-			"end": "</ul>",
-			"beginCaptures": { "0": { "name": "entity.name.type.underlined.syllable.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.type.underlined.syllable.close.gabc" } }
-		  }
-		]
-	  },
-	  "gabc-syllable-controls": {
-		"patterns": [
-		  {
-			"contentName": "markup.other.clear.syllable.gabc",
-			"begin": "<clear>",
-			"end": "</clear>",
-			"beginCaptures": { "0": { "name": "entity.name.type.clear.syllable.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.type.clear.syllable.close.gabc" } }
-		  },
-		  {
-			"contentName": "markup.italic.elision.syllable.gabc",
-			"begin": "<e>",
-			"end": "</e>",
-			"beginCaptures": { "0": { "name": "entity.name.type.elision.syllable.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.type.elision.syllable.close.gabc" } }
-		  },
-		  {
-			"contentName": "markup.other.euouae.syllable.gabc",
-			"begin": "<eu>",
-			"end": "</eu>",
-			"beginCaptures": { "0": { "name": "entity.name.type.euouae.syllable.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.type.euouae.syllable.close.gabc" } }
-		  },
-		  {
-			"contentName": "markup.other.no-line-break.syllable.gabc",
-			"begin": "<nlba>",
-			"end": "</nlba>",
-			"beginCaptures": { "0": { "name": "entity.name.type.no-line-break.syllable.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.type.no-line-break.syllable.close.gabc" } }
-		  },
-		  {
-			"name": "entity.name.type.protrusion.syllable.gabc",
-			"match": "<pr(:.?[0-9])?/?>"
-		  }
-		]
-	  },
-	  "gabc-syllable-other": {
-		"patterns": [
-		  {
-			"contentName": "markup.other.above-lines-text.syllable.gabc",
-			"begin": "<alt>",
-			"end": "</alt>",
-			"beginCaptures": { "0": { "name": "entity.name.type.above-lines-text.syllable.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.type.above-lines-text.syllable.close.gabc" } }
-		  },
-		  {
-			"contentName": "markup.other.special.syllable.gabc",
-			"begin": "<sp>",
-			"end": "</sp>",
-			"beginCaptures": { "0": { "name": "entity.name.type.special.syllable.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.type.special.syllable.close.gabc" } }
-		  },
-		  {
-			"contentName": "markup.other.verbatim.syllable.gabc",
-			"begin": "<v>",
-			"end": "</v>",
-			"beginCaptures": { "0": { "name": "entity.name.type.verbatim.syllable.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.type.verbatim.syllable.close.gabc" } },
-			"patterns": [ { "include": "#latex-verbatim" } ]
-		  }
-		]
-	  },
-	  "gabc-syllable-translation": {
-		"patterns": [
-		  {
-			"name": "string.translation.syllable.gabc",
-			"begin": "\\[",
-			"end": "\\]",
-			"beginCaptures": { "0": { "name": "string.translation.syllable.open.gabc" } },
-			"endCaptures": { "0": { "name": "string.translation.syllable.close.gabc" } }
-		  }
-		]
-	  },
-	  "gabc-notes-region": {
-		"patterns": [
-		  {
-			"name": "region.notes.gabc",
-			"begin": "\\(",
-			"end": "\\)",
-			"beginCaptures": { "0": { "name": "region.notes.open.gabc" } },
-			"endCaptures": { "0": { "name": "region.notes.close.gabc" } },
+		"comments": {
 			"patterns": [
-			  { "include": "#gabc-notes" },
-			  { "include": "#nabc-region" }
+				{
+					"name": "comment.line.percentage.gabc",
+					"begin": "%",
+					"end": "$"
+				}
 			]
-		  }
-		]
-	  },
-	  "gabc-notes-fusible-region": {
-		"patterns": [
-		  {
-			"name": "region.notes.fusible.gabc",
-			"begin": "@\\[",
-			"end": "\\]",
-			"beginCaptures": { "0": { "name": "keyword.control.notes.fusible.open.gabc" } },
-			"endCaptures": { "0": { "name": "keyword.control.notes.fusible.close.gabc" } },
-			"patterns": [ { "include": "#gabc-notes" } ]
-		  }
-		]
-	  },
-	  "gabc-notes": {
-		"patterns": [
-		  { "include": "#gabc-notes-spacing" },
-		  { "include": "#gabc-notes-additional-symbols" },
-		  { "include": "#gabc-notes-separation-bars" },
-		  { "include": "#gabc-notes-clefs" },
-		  { "include": "#gabc-notes-line-breaks" },
-		  { "include": "#gabc-notes-choral-signs" },
-		  { "include": "#gabc-notes-braces" },
-		  { "include": "#gabc-notes-stem-length" },
-		  { "include": "#gabc-notes-custom-ledger-lines" },
-		  { "include": "#gabc-notes-slurs" },
-		  { "include": "#gabc-notes-above-lines-text" },
-		  { "include": "#gabc-notes-macros" },
-		  {
-			"name": "variable.parameter.symbol.custos.gabc",
-			"match": "[a-np]\\+"
-		  },
-		  {
-			"name": "variable.parameter.note.accident.sharp.gabc",
-			"match": "[a-np]#"
-		  },
-		  {
-			"name": "variable.parameter.note.accident.flat.gabc",
-			"match": "[a-np]x"
-		  },
-		  {
-			"name": "variable.parameter.note.accident.natural.gabc",
-			"match": "[a-np]y"
-		  },
-		  {
-			"name": "constant.character.note.pitch.gabc",
-			"match": "[a-np]"
-		  },
-		  {
-			"name": "constant.character.note.pitch.punctum-inclinatum.gabc",
-			"match": "[A-NP]([012]?)",
-			"captures": { "1": { "name": "constant.numeric.note.pitch.punctum-inclinatum.leaning.gabc" } }
-		  },
-		  {
-			"name": "constant.character.escape.note.shape.oriscus.gabc",
-			"match": "o([01]?)",
-			"captures": { "1": { "name": "constant.numeric.note.shape.oriscus.variant.gabc" } }
-		  },
-		  {
-			"name": "constant.character.escape.note.shape.oriscus.scapus.gabc",
-			"match": "O([01]?)",
-			"captures": { "1": { "name": "constant.numeric.note.shape.oriscus.variant.gabc" } }
-		  },
-		  {
-			"name": "constant.character.escape.note.shape.pes.quadratum.gabc",
-			"match": "q"
-		  },
-		  {
-			"name": "constant.character.escape.note.shape.quilisma.gabc",
-			"match": "w"
-		  },
-		  {
-			"name": "constant.character.escape.note.shape.quilisma.quadratum.gabc",
-			"match": "W"
-		  },
-		  {
-			"name": "constant.character.escape.note.shape.trivirga.gabc",
-			"match": "vvv"
-		  },
-		  {
-			"name": "constant.character.escape.note.shape.bivirga.gabc",
-			"match": "vv"
-		  },
-		  {
-			"name": "constant.character.escape.note.shape.virga.gabc",
-			"match": "v"
-		  },
-		  {
-			"name": "constant.character.escape.note.shape.virga.reversa.gabc",
-			"match": "V"
-		  },
-		  {
-			"name": "constant.character.escape.note.shape.tristropha.gabc",
-			"match": "sss"
-		  },
-		  {
-			"name": "constant.character.escape.note.shape.distropha.gabc",
-			"match": "ss"
-		  },
-		  {
-			"name": "constant.character.escape.note.shape.stropha.gabc",
-			"match": "s"
-		  },
-		  {
-			"name": "variable.parameter.note.shape.liquescent.deminutus.gabc",
-			"match": "~"
-		  },
-		  {
-			"name": "variable.parameter.note.shape.liquescent.augmented.gabc",
-			"match": ">"
-		  },
-		  {
-			"name": "variable.parameter.note.shape.liquescent.diminished.gabc",
-			"match": "<"
-		  },
-		  {
-			"name": "variable.parameter.note.shape.linea.gabc",
-			"match": "="
-		  },
-		  {
-			"name": "constant.character.escape.note.shape.cavum.surrounded.gabc",
-			"match": "r0"
-		  },
-		  {
-			"name": "constant.character.escape.note.shape.cavum.gabc",
-			"match": "r"
-		  },
-		  {
-			"name": "constant.character.escape.note.shape.quadratum.surrounded.gabc",
-			"match": "R"
-		  },
-		  {
-			"name": "variable.parameter.note.shape.initio-debilis.gabc",
-			"match": "-"
-		  },
-		  {
-			"name": "keyword.control.note.fusion.gabc",
-			"match": "@"
-		  }
-		]
-	  },
-	  "gabc-notes-spacing": {
-		"patterns": [
-		  {
-			"contentName": "constant.numeric.spacing.factored.gabc",
-			"begin": "/\\[",
-			"end": "\\]",
-			"beginCaptures": { "0": { "name": "variable.parameter.spacing.factored.open.gabc" } },
-			"endCaptures": { "0": { "name": "variable.parameter.spacing.factored.close.gabc" } }
-		  },
-		  {
-			"name": "variable.parameter.spacing.half.same-neume.gabc",
-			"match": "/0"
-		  },
-		  {
-			"name": "variable.parameter.spacing.small.same-neume.gabc",
-			"match": "/!"
-		  },
-		  {
-			"name": "variable.parameter.spacing.medium.gabc",
-			"match": "//"
-		  },
-		  {
-			"name": "variable.parameter.spacing.small.gabc",
-			"match": "/"
-		  },
-		  {
-			"name": "variable.parameter.spacing.non-breaking.gabc",
-			"match": "! "
-		  },
-		  {
-			"name": "variable.parameter.spacing.zero.gabc",
-			"match": "!"
-		  }
-		]
-	  },
-	  "gabc-notes-additional-symbols": {
-		"patterns": [
-		  {
-			"name": "variable.parameter.symbol.punctum-mora-vocis.gabc",
-			"match": "\\."
-		  },
-		  {
-			"name": "variable.parameter.symbol.episema.gabc",
-			"match": "_[0-5]*"
-		  },
-		  {
-			"name": "variable.parameter.symbol.ictus.gabc",
-			"match": "'[01]?"
-		  },
-		  {
-			"name": "variable.parameter.symbol.accent.above.gabc",
-			"match": "r1"
-		  },
-		  {
-			"name": "variable.parameter.symbol.accent.grave.above.gabc",
-			"match": "r2"
-		  },
-		  {
-			"name": "variable.parameter.symbol.circle.above.gabc",
-			"match": "r3"
-		  },
-		  {
-			"name": "variable.parameter.symbol.semicircle.lower.above.gabc",
-			"match": "r4"
-		  },
-		  {
-			"name": "variable.parameter.symbol.semicircle.upper.above.gabc",
-			"match": "r5"
-		  },
-		  {
-			"name": "variable.parameter.symbol.musica.ficta.flat.gabc",
-			"match": "r6"
-		  },
-		  {
-			"name": "variable.parameter.symbol.musica.ficta.natural.gabc",
-			"match": "r7"
-		  },
-		  {
-			"name": "variable.parameter.symbol.musica.ficta.sharp.gabc",
-			"match": "r8"
-		  }
-		]
-	  },
-	  "gabc-notes-separation-bars": {
-		"patterns": [
-		  {
-			"name": "punctuation.separator.virgula.gabc",
-			"match": "`0?"
-		  },
-		  {
-			"name": "punctuation.separator.divisio.minimis.gabc",
-			"match": "\\^0?"
-		  },
-		  {
-			"name": "punctuation.separator.divisio.minima.gabc",
-			"match": ",[0_]?"
-		  },
-		  {
-			"name": "punctuation.separator.divisio.minor.gabc",
-			"match": ";[1-6]?"
-		  },
-		  {
-			"name": "punctuation.separator.divisio.finalis.gabc",
-			"match": "::"
-		  },
-		  {
-			"name": "punctuation.separator.divisio.maior.gabc",
-			"match": ":\\??"
-		  }
-		]
-	  },
-	  "gabc-notes-clefs": {
-		"patterns": [
-		  {
-			"name": "variable.parameter.clef.gabc",
-			"match": "[cf]b?([1-5])",
-			"captures": { "1": { "name": "constant.numeric.clef.position.gabc" } }
-		  }
-		]
-	  },
-	  "gabc-notes-line-breaks": {
-		"patterns": [
-		  {
-			"name": "entity.name.function.break.justified.forced-custos.gabc",
-			"match": "z\\+"
-		  },
-		  {
-			"name": "entity.name.function.break.justified.no-custos.gabc",
-			"match": "z\\-"
-		  },
-		  {
-			"name": "entity.name.function.break.justified.gabc",
-			"match": "z"
-		  },
-		  {
-			"name": "entity.name.function.break.ragged.forced-custos.gabc",
-			"match": "Z\\+"
-		  },
-		  {
-			"name": "entity.name.function.break.ragged.no-custos.gabc",
-			"match": "Z\\-"
-		  },
-		  {
-			"name": "entity.name.function.break.ragged.gabc",
-			"match": "Z"
-		  }
-		]
-	  },
-	  "gabc-notes-choral-signs": {
-		"patterns": [
-		  {
-			"contentName": "string.choral.sign.gabc",
-			"begin": "\\[ch:",
-			"end": "\\]",
-			"beginCaptures": { "0": { "name": "entity.name.class.choral.sign.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.class.choral.sign.close.gabc" } }
-		  },
-		  {
-			"contentName": "string.choral.sign.nabc.gabc",
-			"begin": "\\[cn:",
-			"end": "\\]",
-			"beginCaptures": { "0": { "name": "entity.name.class.choral.sign.nabc.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.class.choral.sign.nabc.close.gabc" } }
-		  }
-		]
-	  },
-	  "gabc-notes-braces": {
-		"patterns": [
-		  {
-			"contentName": "string.brace.rounded.over.gabc",
-			"begin": "\\[ob:",
-			"end": "\\]",
-			"beginCaptures": { "0": { "name": "entity.name.class.brace.rounded.over.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.class.brace.rounded.over.close.gabc" } }
-		  },
-		  {
-			"contentName": "string.brace.rounded.under.gabc",
-			"begin": "\\[ub:",
-			"end": "\\]",
-			"beginCaptures": { "0": { "name": "entity.name.class.brace.rounded.under.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.class.brace.rounded.under.close.gabc" } }
-		  },
-		  {
-			"contentName": "string.brace.curly.over.gabc",
-			"begin": "\\[ocb:",
-			"end": "\\]",
-			"beginCaptures": { "0": { "name": "entity.name.class.brace.curly.over.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.class.brace.curly.over.close.gabc" } }
-		  },
-		  {
-			"contentName": "string.brace.curly.accented.over.gabc",
-			"begin": "\\[ocba:",
-			"end": "\\]",
-			"beginCaptures": { "0": { "name": "entity.name.class.brace.curly.accented.over.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.class.brace.curly.accented.over.close.gabc" } }
-		  }
-		]
-	  },
-	  "gabc-notes-stem-length": {
-		"patterns": [
-		  {
-			"name": "entity.name.class.stem.long.gabc",
-			"match": "\\[ll:1]"
-		  },
-		  {
-			"name": "entity.name.class.stem.short.gabc",
-			"match": "\\[ll:0]"
-		  }
-		]
-	  },
-	  "gabc-notes-custom-ledger-lines": {
-		"patterns": [
-		  {
-			"contentName": "string.custom-ledger-line.over.gabc",
-			"begin": "\\[oll:",
-			"end": "\\]",
-			"beginCaptures": { "0": { "name": "entity.name.class.custom-ledger-line.over.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.class.custom-ledger-line.over.close.gabc" } }
-		  },
-		  {
-			"contentName": "string.custom-ledger-line.under.gabc",
-			"begin": "\\[ull:",
-			"end": "\\]",
-			"beginCaptures": { "0": { "name": "entity.name.class.custom-ledger-line.under.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.class.custom-ledger-line.under.close.gabc" } }
-		  }
-		]
-	  },
-	  "gabc-notes-slurs": {
-		"patterns": [
-		  {
-			"contentName": "string.slur.over.gabc",
-			"begin": "\\[oslur:",
-			"end": "\\]",
-			"beginCaptures": { "0": { "name": "entity.name.class.slur.over.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.class.slur.over.close.gabc" } }
-		  },
-		  {
-			"contentName": "string.slur.under.gabc",
-			"begin": "\\[uslur:",
-			"end": "\\]",
-			"beginCaptures": { "0": { "name": "entity.name.class.slur.under.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.class.slur.under.close.gabc" } }
-		  }
-		]
-	  },
-	  "gabc-notes-above-lines-text": {
-		"patterns": [
-		  {
-			"contentName": "string.above-lines-text.gabc",
-			"begin": "\\[alt:",
-			"end": "\\]",
-			"beginCaptures": { "0": { "name": "entity.name.class.above-lines-text.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.class.above-lines-text.close.gabc" } }
-		  }
-		]
-	  },
-	  "gabc-notes-verbatim": {
-		"patterns": [
-		  {
-			"contentName": "other.verbatim.note.gabc",
-			"begin": "\\[nv:",
-			"end": "\\]",
-			"beginCaptures": { "0": { "name": "entity.name.class.verbatim.note.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.class.verbatim.note.close.gabc" } },
-			"patterns": [ { "include": "#latex-verbatim" } ]
-		  },
-		  {
-			"contentName": "other.verbatim.glyph.gabc",
-			"begin": "\\[gv:",
-			"end": "\\]",
-			"beginCaptures": { "0": { "name": "entity.name.class.verbatim.glyph.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.class.verbatim.glyph.close.gabc" } },
-			"patterns": [ { "include": "#latex-verbatim" } ]
-		  },
-		  {
-			"contentName": "other.verbatim.element.gabc",
-			"begin": "\\[ev:",
-			"end": "\\]",
-			"beginCaptures": { "0": { "name": "entity.name.class.verbatim.element.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.class.verbatim.element.close.gabc" } },
-			"patterns": [ { "include": "#latex-verbatim" } ]
-		  }
-		]
-	  },
-	  "gabc-notes-macros": {
-		"patterns": [
-		  {
-			"name": "constant.numeric.macro.note.gabc",
-			"begin": "\\[nm",
-			"end": "\\]",
-			"beginCaptures": { "0": { "name": "entity.name.function.macro.note.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.function.macro.note.close.gabc" } }
-		  },
-		  {
-			"name": "constant.numeric.macro.glyph.gabc",
-			"begin": "\\[gm",
-			"end": "\\]",
-			"beginCaptures": { "0": { "name": "entity.name.function.macro.glyph.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.function.macro.glyph.close.gabc" } }
-		  },
-		  {
-			"name": "constant.numeric.macro.element.gabc",
-			"begin": "\\[em",
-			"end": "\\]",
-			"beginCaptures": { "0": { "name": "entity.name.function.macro.element.open.gabc" } },
-			"endCaptures": { "0": { "name": "entity.name.function.macro.element.close.gabc" } }
-		  }
-		]
-	  },
-	  "nabc-region": {
-		"name": "region.nabc.gabc",
-		"match": "\\|([a-zA-Z0-9->!~/`]+)\\|?",
-		"captures": {
-		  "0": { "name": "keyword.control.nabc.toggle.gabc" },
-		  "1": { "name": "entity.nabc.gabc" }
+		},
+		"headers": {
+			"patterns": [
+				{
+					"name": "entity.header.gabc",
+					"match": "^([^:]+): *(.*);$",
+					"captures": {
+						"1": { "name": "keyword.control.header.key.gabc" },
+						"2": { "name": "string.header.value.gabc" }
+					}
+				}
+			]
+		},
+		"latex-verbatim": {
+			"patterns": [
+				{
+					"name": "entity.name.function.latex.verbatim.gabc",
+					"match": "\\\\[a-zA-Z@]+"
+				}
+			]
+		},
+		"gabc-syllable-markup": {
+			"patterns": [
+				{
+					"contentName": "markup.bold.syllable.gabc",
+					"begin": "(<)b(>)",
+					"end": "(</)b(>)",
+					"beginCaptures": {
+						"0": { "name": "entity.name.tag.bold.syllable.open.gabc" },
+						"1": { "name": "punctuation.definition.tag.begin.bold.syllable.open.gabc" },
+						"2": { "name": "punctuation.definition.tag.end.bold.syllable.open.gabc" }
+					},
+					"endCaptures": {
+						"0": { "name": "entity.name.tag.bold.syllable.close.gabc" },
+						"1": { "name": "punctuation.definition.tag.begin.bold.syllable.close.gabc" },
+						"2": { "name": "punctuation.definition.tag.end.bold.syllable.close.gabc" }
+					},
+					"patterns": [
+						{ "include": "#gabc-syllable-markup" },
+						{ "include": "#gabc-syllable-controls" },
+						{ "include": "#gabc-syllable-other" },
+						{ "include": "#gabc-syllable-translation" }
+					]
+				},
+				{
+					"begin": "(<)c(>)",
+					"end": "(</)c(>)",
+					"beginCaptures": {
+						"0": { "name": "invalid.colored.syllable.open.gabc" },
+						"1": { "name": "punctuation.definition.tag.begin.colored.syllable.open.gabc" },
+						"2": { "name": "punctuation.definition.tag.end.colored.syllable.open.gabc" }
+					},
+					"endCaptures": {
+						"0": { "name": "invalid.colored.syllable.close.gabc" },
+						"1": { "name": "punctuation.definition.tag.begin.colored.syllable.close.gabc" },
+						"2": { "name": "punctuation.definition.tag.end.colored.syllable.close.gabc" }
+					},
+					"patterns": [
+						{ "include": "#gabc-syllable-markup" },
+						{ "include": "#gabc-syllable-controls" },
+						{ "include": "#gabc-syllable-other" },
+						{ "include": "#gabc-syllable-translation" }
+					]
+				},
+				{
+					"contentName": "markup.italic.syllable.gabc",
+					"begin": "(<)i(>)",
+					"end": "(</)i(>)",
+					"beginCaptures": {
+						"0": { "name": "entity.name.tag.italic.syllable.open.gabc" },
+						"1": { "name": "punctuation.definition.tag.begin.italic.syllable.open.gabc" },
+						"2": { "name": "punctuation.definition.tag.end.italic.syllable.open.gabc" }
+					},
+					"endCaptures": {
+						"0": { "name": "entity.name.tag.italic.syllable.close.gabc" },
+						"1": { "name": "punctuation.definition.tag.begin.italic.syllable.close.gabc" },
+						"2": { "name": "punctuation.definition.tag.end.italic.syllable.close.gabc" }
+					},
+					"patterns": [
+						{ "include": "#gabc-syllable-markup" },
+						{ "include": "#gabc-syllable-controls" },
+						{ "include": "#gabc-syllable-other" },
+						{ "include": "#gabc-syllable-translation" }
+					]
+				},
+				{
+					"begin": "(<)sc(>)",
+					"end": "(</)sc(>)",
+					"beginCaptures": {
+						"0": { "name": "entity.name.tag.smallcaps.syllable.open.gabc" },
+						"1": { "name": "punctuation.definition.tag.begin.smallcaps.syllable.open.gabc" },
+						"2": { "name": "punctuation.definition.tag.end.smallcaps.syllable.open.gabc" }
+					},
+					"endCaptures": {
+						"0": { "name": "entity.name.tag.smallcaps.syllable.close.gabc" },
+						"1": { "name": "punctuation.definition.tag.begin.smallcaps.syllable.close.gabc" },
+						"2": { "name": "punctuation.definition.tag.end.smallcaps.syllable.close.gabc" }
+					},
+					"patterns": [
+						{ "include": "#gabc-syllable-markup" },
+						{ "include": "#gabc-syllable-controls" },
+						{ "include": "#gabc-syllable-other" },
+						{ "include": "#gabc-syllable-translation" }
+					]
+				},
+				{
+					"begin": "(<)tt(>)",
+					"end": "(</)tt(>)",
+					"beginCaptures": {
+						"0": { "name": "entity.name.tag.teletype.syllable.open.gabc" },
+						"1": { "name": "punctuation.definition.tag.begin.teletype.syllable.open.gabc" },
+						"2": { "name": "punctuation.definition.tag.end.teletype.syllable.open.gabc" }
+					},
+					"endCaptures": {
+						"0": { "name": "entity.name.tag.teletype.syllable.close.gabc" },
+						"1": { "name": "punctuation.definition.tag.begin.teletype.syllable.close.gabc" },
+						"2": { "name": "punctuation.definition.tag.end.teletype.syllable.close.gabc" }
+					},
+					"patterns": [
+						{ "include": "#gabc-syllable-markup" },
+						{ "include": "#gabc-syllable-controls" },
+						{ "include": "#gabc-syllable-other" },
+						{ "include": "#gabc-syllable-translation" }
+					]
+				},
+				{
+					"contentName": "markup.underline.syllable.gabc",
+					"begin": "(<)ul(>)",
+					"end": "(</)ul(>)",
+					"beginCaptures": {
+						"0": { "name": "entity.name.tag.underlined.syllable.open.gabc" },
+						"1": { "name": "punctuation.definition.tag.begin.underlined.syllable.open.gabc" },
+						"2": { "name": "punctuation.definition.tag.end.underlined.syllable.open.gabc" }
+					},
+					"endCaptures": {
+						"0": { "name": "entity.name.tag.underlined.syllable.close.gabc" },
+						"1": { "name": "punctuation.definition.tag.begin.underlined.syllable.close.gabc" },
+						"2": { "name": "punctuation.definition.tag.end.underlined.syllable.close.gabc" }
+					},
+					"patterns": [
+						{ "include": "#gabc-syllable-markup" },
+						{ "include": "#gabc-syllable-controls" },
+						{ "include": "#gabc-syllable-other" },
+						{ "include": "#gabc-syllable-translation" }
+					]
+				}
+			]
+		},
+		"gabc-syllable-controls": {
+			"patterns": [
+				{
+					"begin": "(<)clear(>)",
+					"end": "(</)clear(>)",
+					"beginCaptures": {
+						"0": { "name": "entity.name.tag.clear.syllable.open.gabc" },
+						"1": { "name": "punctuation.definition.tag.begin.clear.syllable.open.gabc" },
+						"2": { "name": "punctuation.definition.tag.end.clear.syllable.open.gabc" }
+					},
+					"endCaptures": {
+						"0": { "name": "entity.name.tag.clear.syllable.close.gabc" },
+						"1": { "name": "punctuation.definition.tag.begin.clear.syllable.close.gabc" },
+						"2": { "name": "punctuation.definition.tag.end.clear.syllable.close.gabc" }
+					},
+					"patterns": [
+						{ "include": "#gabc-syllable-markup" },
+						{ "include": "#gabc-syllable-controls" },
+						{ "include": "#gabc-syllable-other" },
+						{ "include": "#gabc-syllable-translation" },
+						{ "include": "#gabc-notes-region" }
+					]
+				},
+				{
+					"contentName": "markup.italic.elision.syllable.gabc",
+					"begin": "(<)e(>)",
+					"end": "(</)e(>)",
+					"beginCaptures": {
+						"0": { "name": "entity.name.tag.elision.syllable.open.gabc" },
+						"1": { "name": "punctuation.definition.tag.begin.elision.syllable.open.gabc" },
+						"2": { "name": "punctuation.definition.tag.end.elision.syllable.open.gabc" }
+					},
+					"endCaptures": {
+						"0": { "name": "entity.name.tag.elision.syllable.close.gabc" },
+						"1": { "name": "punctuation.definition.tag.begin.elision.syllable.open.gabc" },
+						"2": { "name": "punctuation.definition.tag.end.elision.syllable.open.gabc" }
+					},
+					"patterns": [
+						{ "include": "#gabc-syllable-markup" },
+						{ "include": "#gabc-syllable-controls" },
+						{ "include": "#gabc-syllable-other" },
+						{ "include": "#gabc-syllable-translation" }
+					]
+				},
+				{
+					"begin": "(<)eu(>)",
+					"end": "(</)eu(>)",
+					"beginCaptures": {
+						"0": { "name": "entity.name.tag.euouae.syllable.open.gabc" },
+						"1": { "name": "punctuation.definition.tag.begin.euouae.syllable.open.gabc" },
+						"2": { "name": "punctuation.definition.tag.end.euouae.syllable.open.gabc" }
+					},
+					"endCaptures": {
+						"0": { "name": "entity.name.tag.euouae.syllable.close.gabc" },
+						"1": { "name": "punctuation.definition.tag.begin.euouae.syllable.close.gabc" },
+						"2": { "name": "punctuation.definition.tag.end.euouae.syllable.close.gabc" }
+					},
+					"patterns": [
+						{ "include": "#gabc-syllable-markup" },
+						{ "include": "#gabc-syllable-controls" },
+						{ "include": "#gabc-syllable-other" },
+						{ "include": "#gabc-syllable-translation" },
+						{ "include": "#gabc-notes-region" }
+					]
+				},
+				{
+					"begin": "(<)nlba(>)",
+					"end": "(</)nlba(>)",
+					"beginCaptures": {
+						"0": { "name": "entity.name.tag.no-line-break.syllable.open.gabc" },
+						"1": { "name": "punctuation.definition.tag.begin.no-line-break.syllable.open.gabc" },
+						"2": { "name": "punctuation.definition.tag.end.no-line-break.syllable.open.gabc" }
+					},
+					"endCaptures": {
+						"0": { "name": "entity.name.tag.no-line-break.syllable.close.gabc" },
+						"1": { "name": "punctuation.definition.tag.begin.no-line-break.syllable.close.gabc" },
+						"2": { "name": "punctuation.definition.tag.end.no-line-break.syllable.close.gabc" }
+					},
+					"patterns": [
+						{ "include": "#gabc-syllable-markup" },
+						{ "include": "#gabc-syllable-controls" },
+						{ "include": "#gabc-syllable-other" },
+						{ "include": "#gabc-syllable-translation" },
+						{ "include": "#gabc-notes-region" }
+					]
+				},
+				{
+					"name": "entity.name.tag.protrusion.syllable.gabc",
+					"match": "(<)pr(:.?[0-9])?(/?>)",
+					"captures": {
+						"1": { "name": "punctuation.definition.tag.begin.protrusion.syllable.gabc" },
+						"3": { "name": "punctuation.definition.tag.end.protrusion.syllable.gabc" }
+					}
+				}
+			]
+		},
+		"gabc-syllable-other": {
+			"patterns": [
+				{
+					"contentName": "string.above-lines-text.syllable.gabc",
+					"begin": "(<)alt(>)",
+					"end": "(</)alt(>)",
+					"beginCaptures": {
+						"0": { "name": "entity.name.tag.above-lines-text.syllable.open.gabc" },
+						"1": { "name": "punctuation.definition.tag.begin.above-lines-text.syllable.open.gabc" },
+						"2": { "name": "punctuation.definition.tag.end.above-lines-text.syllable.open.gabc" }
+					},
+					"endCaptures": {
+						"0": { "name": "entity.name.tag.above-lines-text.syllable.close.gabc" },
+						"1": { "name": "punctuation.definition.tag.begin.above-lines-text.syllable.close.gabc" },
+						"2": { "name": "punctuation.definition.tag.end.above-lines-text.syllable.close.gabc" }
+					}
+				},
+				{
+					"contentName": "string.special.syllable.gabc",
+					"begin": "(<)sp(>)",
+					"end": "(</)sp(>)",
+					"beginCaptures": {
+						"0": { "name": "entity.name.tag.special.syllable.open.gabc" },
+						"1": { "name": "punctuation.definition.tag.begin.special.syllable.open.gabc" },
+						"2": { "name": "punctuation.definition.tag.end.special.syllable.open.gabc" }
+					},
+					"endCaptures": {
+						"0": { "name": "entity.name.tag.special.syllable.close.gabc" },
+						"1": { "name": "punctuation.definition.tag.begin.special.syllable.close.gabc" },
+						"2": { "name": "punctuation.definition.tag.end.special.syllable.close.gabc" }
+					}
+				},
+				{
+					"begin": "(<)v(>)",
+					"end": "(</)v(>)",
+					"beginCaptures": {
+						"0": { "name": "entity.name.tag.verbatim.syllable.open.gabc" },
+						"1": { "name": "punctuation.definition.tag.begin.verbatim.syllable.open.gabc" },
+						"2": { "name": "punctuation.definition.tag.end.verbatim.syllable.open.gabc" }
+					},
+					"endCaptures": {
+						"0": { "name": "entity.name.tag.verbatim.syllable.close.gabc" },
+						"1": { "name": "punctuation.definition.tag.begin.verbatim.syllable.close.gabc" },
+						"2": { "name": "punctuation.definition.tag.end.verbatim.syllable.close.gabc" }
+					},
+					"patterns": [ { "include": "#latex-verbatim" } ]
+				}
+			]
+		},
+		"gabc-syllable-translation": {
+			"patterns": [
+				{
+					"name": "string.translation.syllable.gabc",
+					"begin": "\\[",
+					"end": "\\]",
+					"beginCaptures": { "0": { "name": "string.translation.syllable.open.gabc" } },
+					"endCaptures": { "0": { "name": "string.translation.syllable.close.gabc" } }
+				}
+			]
+		},
+		"gabc-notes-region": {
+			"patterns": [
+				{
+					"name": "region.notes.gabc",
+					"begin": "\\(",
+					"end": "\\)",
+					"beginCaptures": { "0": { "name": "region.notes.open.gabc" } },
+					"endCaptures": { "0": { "name": "region.notes.close.gabc" } },
+					"patterns": [
+						{ "include": "#gabc-notes" },
+						{ "include": "#nabc-region" }
+					]
+				}
+			]
+		},
+		"gabc-notes-fusible-region": {
+			"patterns": [
+				{
+					"name": "region.notes.fusible.gabc",
+					"begin": "@\\[",
+					"end": "\\]",
+					"beginCaptures": { "0": { "name": "keyword.control.notes.fusible.open.gabc" } },
+					"endCaptures": { "0": { "name": "keyword.control.notes.fusible.close.gabc" } },
+					"patterns": [ { "include": "#gabc-notes" } ]
+				}
+			]
+		},
+		"gabc-notes": {
+			"patterns": [
+				{ "include": "#gabc-notes-spacing" },
+				{ "include": "#gabc-notes-additional-symbols" },
+				{ "include": "#gabc-notes-separation-bars" },
+				{ "include": "#gabc-notes-clefs" },
+				{ "include": "#gabc-notes-line-breaks" },
+				{ "include": "#gabc-notes-choral-signs" },
+				{ "include": "#gabc-notes-braces" },
+				{ "include": "#gabc-notes-stem-length" },
+				{ "include": "#gabc-notes-custom-ledger-lines" },
+				{ "include": "#gabc-notes-slurs" },
+				{ "include": "#gabc-notes-above-lines-text" },
+				{ "include": "#gabc-notes-macros" },
+				{
+					"name": "variable.parameter.symbol.custos.gabc",
+					"match": "[a-np]\\+"
+				},
+				{
+					"name": "variable.parameter.note.accident.sharp.gabc",
+					"match": "[a-np]#"
+				},
+				{
+					"name": "variable.parameter.note.accident.flat.gabc",
+					"match": "[a-np]x"
+				},
+				{
+					"name": "variable.parameter.note.accident.natural.gabc",
+					"match": "[a-np]y"
+				},
+				{
+					"name": "constant.character.note.pitch.gabc",
+					"match": "[a-np]"
+				},
+				{
+					"name": "constant.character.note.pitch.punctum-inclinatum.gabc",
+					"match": "[A-NP]([012]?)",
+					"captures": { "1": { "name": "constant.numeric.note.pitch.punctum-inclinatum.leaning.gabc" } }
+				},
+				{
+					"name": "constant.character.escape.note.shape.oriscus.gabc",
+					"match": "o([01]?)",
+					"captures": { "1": { "name": "constant.numeric.note.shape.oriscus.variant.gabc" } }
+				},
+				{
+					"name": "constant.character.escape.note.shape.oriscus.scapus.gabc",
+					"match": "O([01]?)",
+					"captures": { "1": { "name": "constant.numeric.note.shape.oriscus.variant.gabc" } }
+				},
+				{
+					"name": "constant.character.escape.note.shape.pes.quadratum.gabc",
+					"match": "q"
+				},
+				{
+					"name": "constant.character.escape.note.shape.quilisma.gabc",
+					"match": "w"
+				},
+				{
+					"name": "constant.character.escape.note.shape.quilisma.quadratum.gabc",
+					"match": "W"
+				},
+				{
+					"name": "constant.character.escape.note.shape.trivirga.gabc",
+					"match": "vvv"
+				},
+				{
+					"name": "constant.character.escape.note.shape.bivirga.gabc",
+					"match": "vv"
+				},
+				{
+					"name": "constant.character.escape.note.shape.virga.gabc",
+					"match": "v"
+				},
+				{
+					"name": "constant.character.escape.note.shape.virga.reversa.gabc",
+					"match": "V"
+				},
+				{
+					"name": "constant.character.escape.note.shape.tristropha.gabc",
+					"match": "sss"
+				},
+				{
+					"name": "constant.character.escape.note.shape.distropha.gabc",
+					"match": "ss"
+				},
+				{
+					"name": "constant.character.escape.note.shape.stropha.gabc",
+					"match": "s"
+				},
+				{
+					"name": "variable.parameter.note.shape.liquescent.deminutus.gabc",
+					"match": "~"
+				},
+				{
+					"name": "variable.parameter.note.shape.liquescent.augmented.gabc",
+					"match": ">"
+				},
+				{
+					"name": "variable.parameter.note.shape.liquescent.diminished.gabc",
+					"match": "<"
+				},
+				{
+					"name": "variable.parameter.note.shape.linea.gabc",
+					"match": "="
+				},
+				{
+					"name": "constant.character.escape.note.shape.cavum.surrounded.gabc",
+					"match": "r0"
+				},
+				{
+					"name": "constant.character.escape.note.shape.cavum.gabc",
+					"match": "r"
+				},
+				{
+					"name": "constant.character.escape.note.shape.quadratum.surrounded.gabc",
+					"match": "R"
+				},
+				{
+					"name": "variable.parameter.note.shape.initio-debilis.gabc",
+					"match": "-"
+				},
+				{
+					"name": "keyword.control.note.fusion.gabc",
+					"match": "@"
+				}
+			]
+		},
+		"gabc-notes-spacing": {
+			"patterns": [
+				{
+					"contentName": "constant.numeric.spacing.factored.gabc",
+					"begin": "/\\[",
+					"end": "\\]",
+					"beginCaptures": { "0": { "name": "variable.parameter.spacing.factored.open.gabc" } },
+					"endCaptures": { "0": { "name": "variable.parameter.spacing.factored.close.gabc" } }
+				},
+				{
+					"name": "variable.parameter.spacing.half.same-neume.gabc",
+					"match": "/0"
+				},
+				{
+					"name": "variable.parameter.spacing.small.same-neume.gabc",
+					"match": "/!"
+				},
+				{
+					"name": "variable.parameter.spacing.medium.gabc",
+					"match": "//"
+				},
+				{
+					"name": "variable.parameter.spacing.small.gabc",
+					"match": "/"
+				},
+				{
+					"name": "variable.parameter.spacing.non-breaking.gabc",
+					"match": "! "
+				},
+				{
+					"name": "variable.parameter.spacing.zero.gabc",
+					"match": "!"
+				}
+			]
+		},
+		"gabc-notes-additional-symbols": {
+			"patterns": [
+				{
+					"name": "variable.parameter.symbol.punctum-mora-vocis.gabc",
+					"match": "\\."
+				},
+				{
+					"name": "variable.parameter.symbol.episema.gabc",
+					"match": "_[0-5]*"
+				},
+				{
+					"name": "variable.parameter.symbol.ictus.gabc",
+					"match": "'[01]?"
+				},
+				{
+					"name": "variable.parameter.symbol.accent.above.gabc",
+					"match": "r1"
+				},
+				{
+					"name": "variable.parameter.symbol.accent.grave.above.gabc",
+					"match": "r2"
+				},
+				{
+					"name": "variable.parameter.symbol.circle.above.gabc",
+					"match": "r3"
+				},
+				{
+					"name": "variable.parameter.symbol.semicircle.lower.above.gabc",
+					"match": "r4"
+				},
+				{
+					"name": "variable.parameter.symbol.semicircle.upper.above.gabc",
+					"match": "r5"
+				},
+				{
+					"name": "variable.parameter.symbol.musica.ficta.flat.gabc",
+					"match": "r6"
+				},
+				{
+					"name": "variable.parameter.symbol.musica.ficta.natural.gabc",
+					"match": "r7"
+				},
+				{
+					"name": "variable.parameter.symbol.musica.ficta.sharp.gabc",
+					"match": "r8"
+				}
+			]
+		},
+		"gabc-notes-separation-bars": {
+			"patterns": [
+				{
+					"name": "punctuation.separator.virgula.gabc",
+					"match": "`0?"
+				},
+				{
+					"name": "punctuation.separator.divisio.minimis.gabc",
+					"match": "\\^0?"
+				},
+				{
+					"name": "punctuation.separator.divisio.minima.gabc",
+					"match": ",[0_]?"
+				},
+				{
+					"name": "punctuation.separator.divisio.minor.gabc",
+					"match": ";[1-6]?"
+				},
+				{
+					"name": "punctuation.separator.divisio.finalis.gabc",
+					"match": "::"
+				},
+				{
+					"name": "punctuation.separator.divisio.maior.gabc",
+					"match": ":\\??"
+				}
+			]
+		},
+		"gabc-notes-clefs": {
+			"patterns": [
+				{
+					"name": "variable.parameter.clef.gabc",
+					"match": "[cf]b?([1-5])",
+					"captures": { "1": { "name": "constant.numeric.clef.position.gabc" } }
+				}
+			]
+		},
+		"gabc-notes-line-breaks": {
+			"patterns": [
+				{
+					"name": "entity.name.function.break.justified.forced-custos.gabc",
+					"match": "z\\+"
+				},
+				{
+					"name": "entity.name.function.break.justified.no-custos.gabc",
+					"match": "z\\-"
+				},
+				{
+					"name": "entity.name.function.break.justified.gabc",
+					"match": "z"
+				},
+				{
+					"name": "entity.name.function.break.ragged.forced-custos.gabc",
+					"match": "Z\\+"
+				},
+				{
+					"name": "entity.name.function.break.ragged.no-custos.gabc",
+					"match": "Z\\-"
+				},
+				{
+					"name": "entity.name.function.break.ragged.gabc",
+					"match": "Z"
+				}
+			]
+		},
+		"gabc-notes-choral-signs": {
+			"patterns": [
+				{
+					"contentName": "string.choral.sign.gabc",
+					"begin": "\\[ch:",
+					"end": "\\]",
+					"beginCaptures": { "0": { "name": "entity.name.class.choral.sign.open.gabc" } },
+					"endCaptures": { "0": { "name": "entity.name.class.choral.sign.close.gabc" } }
+				},
+				{
+					"contentName": "string.choral.sign.nabc.gabc",
+					"begin": "\\[cn:",
+					"end": "\\]",
+					"beginCaptures": { "0": { "name": "entity.name.class.choral.sign.nabc.open.gabc" } },
+					"endCaptures": { "0": { "name": "entity.name.class.choral.sign.nabc.close.gabc" } }
+				}
+			]
+		},
+		"gabc-notes-braces": {
+			"patterns": [
+				{
+					"contentName": "string.brace.rounded.over.gabc",
+					"begin": "\\[ob:",
+					"end": "\\]",
+					"beginCaptures": { "0": { "name": "entity.name.class.brace.rounded.over.open.gabc" } },
+					"endCaptures": { "0": { "name": "entity.name.class.brace.rounded.over.close.gabc" } }
+				},
+				{
+					"contentName": "string.brace.rounded.under.gabc",
+					"begin": "\\[ub:",
+					"end": "\\]",
+					"beginCaptures": { "0": { "name": "entity.name.class.brace.rounded.under.open.gabc" } },
+					"endCaptures": { "0": { "name": "entity.name.class.brace.rounded.under.close.gabc" } }
+				},
+				{
+					"contentName": "string.brace.curly.over.gabc",
+					"begin": "\\[ocb:",
+					"end": "\\]",
+					"beginCaptures": { "0": { "name": "entity.name.class.brace.curly.over.open.gabc" } },
+					"endCaptures": { "0": { "name": "entity.name.class.brace.curly.over.close.gabc" } }
+				},
+				{
+					"contentName": "string.brace.curly.accented.over.gabc",
+					"begin": "\\[ocba:",
+					"end": "\\]",
+					"beginCaptures": { "0": { "name": "entity.name.class.brace.curly.accented.over.open.gabc" } },
+					"endCaptures": { "0": { "name": "entity.name.class.brace.curly.accented.over.close.gabc" } }
+				}
+			]
+		},
+		"gabc-notes-stem-length": {
+			"patterns": [
+				{
+					"name": "entity.name.class.stem.long.gabc",
+					"match": "\\[ll:1]"
+				},
+				{
+					"name": "entity.name.class.stem.short.gabc",
+					"match": "\\[ll:0]"
+				}
+			]
+		},
+		"gabc-notes-custom-ledger-lines": {
+			"patterns": [
+				{
+					"contentName": "string.custom-ledger-line.over.gabc",
+					"begin": "\\[oll:",
+					"end": "\\]",
+					"beginCaptures": { "0": { "name": "entity.name.class.custom-ledger-line.over.open.gabc" } },
+					"endCaptures": { "0": { "name": "entity.name.class.custom-ledger-line.over.close.gabc" } }
+				},
+				{
+					"contentName": "string.custom-ledger-line.under.gabc",
+					"begin": "\\[ull:",
+					"end": "\\]",
+					"beginCaptures": { "0": { "name": "entity.name.class.custom-ledger-line.under.open.gabc" } },
+					"endCaptures": { "0": { "name": "entity.name.class.custom-ledger-line.under.close.gabc" } }
+				}
+			]
+		},
+		"gabc-notes-slurs": {
+			"patterns": [
+				{
+					"contentName": "string.slur.over.gabc",
+					"begin": "\\[oslur:",
+					"end": "\\]",
+					"beginCaptures": { "0": { "name": "entity.name.class.slur.over.open.gabc" } },
+					"endCaptures": { "0": { "name": "entity.name.class.slur.over.close.gabc" } }
+				},
+				{
+					"contentName": "string.slur.under.gabc",
+					"begin": "\\[uslur:",
+					"end": "\\]",
+					"beginCaptures": { "0": { "name": "entity.name.class.slur.under.open.gabc" } },
+					"endCaptures": { "0": { "name": "entity.name.class.slur.under.close.gabc" } }
+				}
+			]
+		},
+		"gabc-notes-above-lines-text": {
+			"patterns": [
+				{
+					"contentName": "string.above-lines-text.gabc",
+					"begin": "\\[alt:",
+					"end": "\\]",
+					"beginCaptures": { "0": { "name": "entity.name.class.above-lines-text.open.gabc" } },
+					"endCaptures": { "0": { "name": "entity.name.class.above-lines-text.close.gabc" } }
+				}
+			]
+		},
+		"gabc-notes-verbatim": {
+			"patterns": [
+				{
+					"contentName": "other.verbatim.note.gabc",
+					"begin": "\\[nv:",
+					"end": "\\]",
+					"beginCaptures": { "0": { "name": "entity.name.class.verbatim.note.open.gabc" } },
+					"endCaptures": { "0": { "name": "entity.name.class.verbatim.note.close.gabc" } },
+					"patterns": [ { "include": "#latex-verbatim" } ]
+				},
+				{
+					"contentName": "other.verbatim.glyph.gabc",
+					"begin": "\\[gv:",
+					"end": "\\]",
+					"beginCaptures": { "0": { "name": "entity.name.class.verbatim.glyph.open.gabc" } },
+					"endCaptures": { "0": { "name": "entity.name.class.verbatim.glyph.close.gabc" } },
+					"patterns": [ { "include": "#latex-verbatim" } ]
+				},
+				{
+					"contentName": "other.verbatim.element.gabc",
+					"begin": "\\[ev:",
+					"end": "\\]",
+					"beginCaptures": { "0": { "name": "entity.name.class.verbatim.element.open.gabc" } },
+					"endCaptures": { "0": { "name": "entity.name.class.verbatim.element.close.gabc" } },
+					"patterns": [ { "include": "#latex-verbatim" } ]
+				}
+			]
+		},
+		"gabc-notes-macros": {
+			"patterns": [
+				{
+					"name": "constant.numeric.macro.note.gabc",
+					"begin": "\\[nm",
+					"end": "\\]",
+					"beginCaptures": { "0": { "name": "entity.name.function.macro.note.open.gabc" } },
+					"endCaptures": { "0": { "name": "entity.name.function.macro.note.close.gabc" } }
+				},
+				{
+					"name": "constant.numeric.macro.glyph.gabc",
+					"begin": "\\[gm",
+					"end": "\\]",
+					"beginCaptures": { "0": { "name": "entity.name.function.macro.glyph.open.gabc" } },
+					"endCaptures": { "0": { "name": "entity.name.function.macro.glyph.close.gabc" } }
+				},
+				{
+					"name": "constant.numeric.macro.element.gabc",
+					"begin": "\\[em",
+					"end": "\\]",
+					"beginCaptures": { "0": { "name": "entity.name.function.macro.element.open.gabc" } },
+					"endCaptures": { "0": { "name": "entity.name.function.macro.element.close.gabc" } }
+				}
+			]
+		},
+		"nabc-region": {
+			"name": "region.nabc.gabc",
+			"match": "\\|([a-zA-Z0-9->!~/`]+)\\|?",
+			"captures": {
+				"0": { "name": "keyword.control.nabc.toggle.gabc" },
+				"1": { "name": "entity.nabc.gabc" }
+			}
 		}
-	  }
 	},
 	"scopeName": "source.gabc"
-  }
+}
