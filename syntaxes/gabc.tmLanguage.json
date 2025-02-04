@@ -27,7 +27,7 @@
 			"match": "^([^:]+): *(.*);$",
 			"captures": {
 			  "1": { "name": "keyword.control.header.key.gabc" },
-			  "2": { "name": "entity.other.attribute-name.header.value.gabc" }
+			  "2": { "name": "string.header.value.gabc" }
 			}
 		  }
 		]
