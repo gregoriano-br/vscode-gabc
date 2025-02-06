@@ -592,7 +592,7 @@
 		"gabc-notes-clefs": {
 			"patterns": [
 				{
-					"name": "variable.parameter.clef.gabc",
+					"name": "keyword.control.clef.gabc",
 					"match": "[cf]b?([1-5])",
 					"captures": { "1": { "name": "constant.numeric.clef.position.gabc" } }
 				}
@@ -1111,7 +1111,7 @@
 				},
 				{
 					"name": "variable.parameter.nabc.modification.episema.gabc",
-					"match": "-"
+					"match": "-[1-9]?"
 				},
 				{
 					"name": "variable.parameter.nabc.liquescence.augmentive.gabc",
@@ -1119,7 +1119,7 @@
 				},
 				{
 					"name": "variable.parameter.nabc.liquescence.diminutive.gabc",
-					"match": "~"
+					"match": "~[1-9]?"
 				},
 				{
 					"name": "variable.parameter.nabc.connector.gabc",
