@@ -1098,31 +1098,31 @@
 		"nabc-glyph-modifiers": {
 			"patterns": [
 				{
-					"name": "variable.parameter.nabc.modification.mark.gabc",
+					"name": "constant.regexp.nabc.modification.mark.gabc",
 					"match": "S[1-9]?"
 				},
 				{
-					"name": "variable.parameter.nabc.modification.group.gabc",
+					"name": "constant.regexp.nabc.modification.group.gabc",
 					"match": "G[1-9]?"
 				},
 				{
-					"name": "variable.parameter.nabc.modification.melodic.gabc",
+					"name": "constant.regexp.nabc.modification.melodic.gabc",
 					"match": "M[1-9]?"
 				},
 				{
-					"name": "variable.parameter.nabc.modification.episema.gabc",
+					"name": "constant.regexp.nabc.modification.episema.gabc",
 					"match": "-[1-9]?"
 				},
 				{
-					"name": "variable.parameter.nabc.liquescence.augmentive.gabc",
+					"name": "constant.regexp.nabc.liquescence.augmentive.gabc",
 					"match": ">[1-9]?"
 				},
 				{
-					"name": "variable.parameter.nabc.liquescence.diminutive.gabc",
+					"name": "constant.regexp.nabc.liquescence.diminutive.gabc",
 					"match": "~[1-9]?"
 				},
 				{
-					"name": "variable.parameter.nabc.connector.gabc",
+					"name": "constant.regexp.nabc.connector.gabc",
 					"match": "!"
 				}
 			]
@@ -1130,40 +1130,49 @@
 		"nabc-pitch": {
 			"patterns": [
 				{
-					"name": "string.nabc.pitch.gabc",
-					"match": "h[a-np]"
+					"name": "string.regexp.nabc.pitch.gabc",
+					"match": "h([a-np])",
+					"captures": {
+						"1": { "name": "variable.parameter.nabc.pitch.gabc" }
+					}
 				}
 			]
 		},
 		"nabc-subpunctis-prepunctis": {
 			"patterns": [
 				{
-					"name": "variable.parameter.nabc.prepunctis.gabc",
-					"match": "pp[nqtuvwxyz]?([1-9])",
-					"captures": { "1": { "name": "constant.numeric.nabc.prepunctis.factor.gabc" } }
+					"name": "entity.name.class.nabc.prepunctis.gabc",
+					"match": "pp([nqtuvwxyz]?)([1-9])",
+					"captures": {
+						"1": { "name": "variable.parameter.nabc.prepunctis.modifier.gabc" },
+						"2": { "name": "constant.numeric.nabc.prepunctis.factor.gabc" }
+					}
 				},
 				{
-					"name": "variable.parameter.nabc.subpunctis.gabc",
-					"match": "su[nqtuvwxyz]?([1-9])",
-					"captures": { "1": { "name": "constant.numeric.nabc.subpunctis.factor.gabc" } }
+					"name": "entity.name.class.nabc.subpunctis.gabc",
+					"match": "su([nqtuvwxyz]?)([1-9])",
+					"captures": {
+						"1": { "name": "variable.parameter.nabc.subpunctis.modifier.gabc" },
+						"2": { "name": "constant.numeric.nabc.subpunctis.factor.gabc" }
+					}
 				}
 			]
 		},
 		"nabc-significant-letters": {
 			"patterns": [
 				{
-					"name": "entity.name.class.nabc.letter.significant.gabc",
+					"name": "constant.character.escape.nabc.letter.significant.gabc",
 					"match": "ls([a-z]+)([1-9])",
 					"captures": {
-						"1": { "name": "constant.character.nabc.letter.significant.name.gabc" },
+						"1": { "name": "variable.parameter.nabc.letter.significant.name.gabc" },
 						"2": { "name": "constant.numeric.nabc.letter.significant.position.gabc" }
 					}
 				},
 				{
-					"name": "entity.name.class.nabc.letter.tironian.gabc",
+					"name": "constant.character.escape.nabc.letter.tironian.gabc",
 					"match": "lt([a-z]+)([1-9])",
 					"captures": {
-						"1": { "name": "constant.character.nabc.letter.significant.name.gabc" },
+						"1": { "name": "variable.parameter.nabc.letter.significant.name.gabc" },
 						"2": { "name": "constant.numeric.nabc.letter.significant.position.gabc" }
 					}
 				}
