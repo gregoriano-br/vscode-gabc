@@ -825,7 +825,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.nabc.virga.gabc",
-					"match": "vi([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "vi[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
@@ -834,7 +834,7 @@
 				},
 				{
 					"name": "keyword.control.nabc.virga.strata.gabc",
-					"match": "vs([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "vs[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
@@ -843,7 +843,7 @@
 				},
 				{
 					"name": "keyword.control.nabc.punctum.gabc",
-					"match": "pu([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "pu[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
@@ -852,7 +852,7 @@
 				},
 				{
 					"name": "keyword.control.nabc.gravis.gabc",
-					"match": "gr([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "gr[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
@@ -861,7 +861,7 @@
 				},
 				{
 					"name": "keyword.control.nabc.tractulus.gabc",
-					"match": "ta([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "ta[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
@@ -870,7 +870,7 @@
 				},
 				{
 					"name": "keyword.control.nabc.clivis.gabc",
-					"match": "cl([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "cl[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
@@ -879,7 +879,7 @@
 				},
 				{
 					"name": "keyword.control.nabc.pes.gabc",
-					"match": "pe([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "pe[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
@@ -888,7 +888,7 @@
 				},
 				{
 					"name": "keyword.control.nabc.pes.quassus.gabc",
-					"match": "pq([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "pq[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
@@ -897,7 +897,7 @@
 				},
 				{
 					"name": "keyword.control.nabc.pes.stratus.gabc",
-					"match": "pt([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "pt[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
@@ -906,7 +906,7 @@
 				},
 				{
 					"name": "keyword.control.nabc.porrectus.gabc",
-					"match": "po([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "po[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
@@ -915,7 +915,7 @@
 				},
 				{
 					"name": "keyword.control.nabc.porrectus.flexus.gabc",
-					"match": "pf([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "pf[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
@@ -924,7 +924,7 @@
 				},
 				{
 					"name": "keyword.control.nabc.torculus.gabc",
-					"match": "to([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "to[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
@@ -933,7 +933,7 @@
 				},
 				{
 					"name": "keyword.control.nabc.torculus.resupinus.gabc",
-					"match": "tr([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "tr[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
@@ -942,7 +942,7 @@
 				},
 				{
 					"name": "keyword.control.nabc.climacus.gabc",
-					"match": "ci([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "ci[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
@@ -951,7 +951,7 @@
 				},
 				{
 					"name": "keyword.control.nabc.scandicus.gabc",
-					"match": "sc([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "sc[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
@@ -960,7 +960,7 @@
 				},
 				{
 					"name": "keyword.control.nabc.scandicus.flexus.gabc",
-					"match": "sf([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "sf[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
@@ -969,7 +969,7 @@
 				},
 				{
 					"name": "keyword.control.nabc.stropha.gabc",
-					"match": "st([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "st[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
@@ -978,7 +978,7 @@
 				},
 				{
 					"name": "keyword.control.nabc.distropha.gabc",
-					"match": "ds([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "ds[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
@@ -987,7 +987,7 @@
 				},
 				{
 					"name": "keyword.control.nabc.tristropha.gabc",
-					"match": "ts([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "ts[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
@@ -996,7 +996,7 @@
 				},
 				{
 					"name": "keyword.control.nabc.trigonus.gabc",
-					"match": "tg([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "tg[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
@@ -1005,7 +1005,7 @@
 				},
 				{
 					"name": "keyword.control.nabc.bivirga.gabc",
-					"match": "bv([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "bv[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
@@ -1014,7 +1014,7 @@
 				},
 				{
 					"name": "keyword.control.nabc.trivirga.gabc",
-					"match": "tv([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "tv[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
@@ -1023,7 +1023,7 @@
 				},
 				{
 					"name": "keyword.control.nabc.pressus.maior.gabc",
-					"match": "pr([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "pr[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
@@ -1032,7 +1032,7 @@
 				},
 				{
 					"name": "keyword.control.nabc.pressus.minor.gabc",
-					"match": "pi([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "pi[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
@@ -1041,7 +1041,7 @@
 				},
 				{
 					"name": "keyword.control.nabc.oriscus.gabc",
-					"match": "or([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "or[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
@@ -1050,7 +1050,7 @@
 				},
 				{
 					"name": "keyword.control.nabc.salicus.gabc",
-					"match": "sa([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "sa[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
@@ -1059,7 +1059,7 @@
 				},
 				{
 					"name": "keyword.control.nabc.pes.quilisma.3-loops.gabc",
-					"match": "ql([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "ql[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
@@ -1068,7 +1068,7 @@
 				},
 				{
 					"name": "keyword.control.nabc.pes.quilisma.2-loops.gabc",
-					"match": "qi([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "qi[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
@@ -1077,7 +1077,7 @@
 				},
 				{
 					"name": "keyword.control.nabc.uncinus.gabc",
-					"match": "un([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "un[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
@@ -1086,7 +1086,7 @@
 				},
 				{
 					"name": "keyword.control.nabc.oriscus.clivis.gabc",
-					"match": "oc([GMS>~-][1-9]?)?(h[a-np])?(!)?",
+					"match": "oc[1-9]?([GMS>~-][1-9]?)?(h[a-np])?(!)?",
 					"captures": {
 						"1": { "patterns": [ { "include": "#nabc-glyph-modifiers" } ] },
 						"2": { "patterns": [ { "include": "#nabc-pitch" } ] },
