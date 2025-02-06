@@ -1,14 +1,22 @@
 {
-	"name": "vscode-gabc",
-	"displayName": "vscode-gabc",
-	"description": "GABC/NABC Gregorian Chant Notation",
+	"name": "gabc-gregorian-chant-notation",
+	"displayName": "GABC Gregorian Chant Notation",
+	"description": "Adds support for GABC Gregorian Chant Notation syntax highlighting (including NABC extended notation for adiastematic neums)",
 	"version": "0.0.1",
+	"icon": "images/icon.png",
+	"author": {
+		"name": "Laércio de Sousa",
+		"email": "laercio@sivali.sousa.nom.br"
+	},
 	"engines": {
 		"vscode": "^1.96.0"
 	},
 	"categories": [
 		"Programming Languages"
 	],
+	"repository": {
+		"url": "https://github.com/lbssousa/vscode-gabc"
+	},
 	"contributes": {
 		"languages": [
 			{
