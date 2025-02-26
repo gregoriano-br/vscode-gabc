@@ -72,7 +72,7 @@
 						"2": { "name": "punctuation.definition.tag.end.colored.syllable.open.gabc" }
 					},
 					"endCaptures": {
-						"0": { "name": "invalid.colored.syllable.close.gabc" },
+						"0": { "name": "string.colored.syllable.close.gabc" },
 						"1": { "name": "punctuation.definition.tag.begin.colored.syllable.close.gabc" },
 						"2": { "name": "punctuation.definition.tag.end.colored.syllable.close.gabc" }
 					},
