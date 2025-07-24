@@ -1,32 +1,24 @@
-            - name: Publish VS Code Extension
-  # You may pin to the exact commit or the version.
-  # uses: HaaLeo/publish-vscode-extension@ca5561daa085dee804bf9f37fe0165785a9b14db
-  uses: HaaLeo/publish-vscode-extension@v2
-  with:
-    # Personal access token.
-    pat: 
-    # Path to the vsix file to be published. Cannot be used together with packagePath.
-    extensionFile: # optional
-    # Use the registry API at this base URL.
-    registryUrl: # optional, default is https://open-vsx.org
-    # Path to the extension to be packaged and published. Cannot be used together with extensionFile.
-    packagePath: # optional, default is ./
-    # Prepend all relative links in README.md with this URL.
-    baseContentUrl: # optional
-    # Prepend all relative image links in README.md with this URL.
-    baseImagesUrl: # optional
-    # Use yarn instead of npm while packing extension files.
-    yarn: # optional
-    # Set this option to "true" to package your extension but do not publish it.
-    dryRun: # optional
-    # Allow publishing extensions to the visual studio marketplace which use a proposed API (enableProposedApi: true).
-    noVerify: # optional
-    # Publish a version marked as a Pre-Release.
-    preRelease: # optional
-    # Check that dependencies defined in package.json exist in node_modules. Set to false if using pnpm or yarn v2+ with pnp.
-    dependencies: # optional, default is true
-    # Fail silently if version already exists on the marketplace.
-    skipDuplicate: # optional
-    # Target architecture(s) the extension should run on.
-    target: # optional, default is 
-          
+on:
+  push:
+    tags:
+      - "*"
+
+name: Publish Extension
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - name: Publish to Open VSX Registry
+        uses: HaaLeo/publish-vscode-extension@v2
+        with:
+          pat: ${{ secrets.OPEN_VSX_TOKEN }}
+      - name: Publish to Visual Studio Marketplace
+        uses: HaaLeo/publish-vscode-extension@v2
+        with:
+          pat: ${{ secrets.VS_MARKETPLACE_TOKEN }}
+          registryUrl: https://marketplace.visualstudio.com
