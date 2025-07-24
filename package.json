@@ -16,7 +16,7 @@
 		"Programming Languages"
 	],
 	"repository": {
-		"url": "https://github.com/lbssousa/vscode-gabc"
+		"url": "https://github.com/gregoriano-br/vscode-gabc"
 	},
 	"contributes": {
 		"languages": [
