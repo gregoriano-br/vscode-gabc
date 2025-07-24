@@ -1,8 +1,9 @@
 {
 	"name": "gabc-gregorian-chant-notation",
+	"publisher": "gregoriano-br",
 	"displayName": "GABC Gregorian Chant Notation",
 	"description": "Adds support for GABC Gregorian Chant Notation syntax highlighting (including NABC extended notation for adiastematic neums)",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"icon": "images/icon.png",
 	"author": {
 		"name": "Laércio de Sousa",
