@@ -160,7 +160,7 @@ function getWebviewContent(gabcContent, metadata) {
 
 <body>
     <h1>${nameHtml}</h1>
-    <h2>${transcriberHtml}</h2>
+    <h3>Transcriber: ${transcriberHtml}</h3>
     <div id="svg-final" class="gabc final chant-container"></div>
 
     <!-- Exsurge.js library - Using the modern bbloomf/jgabc implementation via jsDelivr CDN -->
