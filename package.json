@@ -2,8 +2,8 @@
 	"name": "gabc-gregorian-chant-notation",
 	"publisher": "gregoriano-br",
 	"displayName": "GABC Gregorian Chant Notation",
-	"description": "Adds support for GABC Gregorian Chant Notation syntax highlighting (including NABC extended notation for adiastematic neums)",
-	"version": "1.0.1",
+	"description": "Adds support for GABC Gregorian Chant Notation syntax highlighting and rendering (including NABC extended notation for adiastematic neums)",
+	"version": "1.1.0",
 	"icon": "images/icon.png",
 	"author": {
 		"name": "Laércio de Sousa",
@@ -18,6 +18,7 @@
 	"repository": {
 		"url": "https://github.com/gregoriano-br/vscode-gabc"
 	},
+    "main": "main.js",
 	"contributes": {
 		"languages": [
 			{
@@ -38,7 +39,23 @@
 				"scopeName": "source.gabc",
 				"path": "./syntaxes/gabc.tmLanguage.json"
 			}
-		]
+		],
+		"commands": [
+            {
+                "command": "gabcsviewer.showGabcsPreview",
+                "title": "GABC: Show Preview",
+                "icon": "$(open-preview)"
+            }
+		],
+		"menus": {
+            "editor/title": [
+                {
+                    "when": "resourceExtname == .gabc",
+                    "command": "gabcsviewer.showGabcsPreview", 
+                    "group": "navigation"
+                }
+            ]
+        }
 	},
 	"__metadata": {
 		"size": 49988
