@@ -19,6 +19,10 @@
 		"url": "https://github.com/gregoriano-br/vscode-gabc"
 	},
     "main": "main.js",
+    "activationEvents": [
+        "onLanguage:gabc",
+        "onCommand:gabcsviewer.showGabcsPreview"
+    ],
 	"contributes": {
 		"languages": [
 			{
